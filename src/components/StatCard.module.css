@@ -1,0 +1,19 @@
+.statCard {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  flex: 1;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.statLabel {
+  color: #6b7280;
+  font-size: 0.9rem;
+}

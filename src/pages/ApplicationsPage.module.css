@@ -1,0 +1,12 @@
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.emptyState {
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem;
+}
