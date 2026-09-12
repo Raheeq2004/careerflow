@@ -1,5 +1,5 @@
 const STORAGE_KEY = "careerflow.applications.v1";
-
+//fixed label used to store/retrieve data in localStorage.
 function readFromStorage() {
   const rawValue = localStorage.getItem(STORAGE_KEY);
 
@@ -8,7 +8,7 @@ function readFromStorage() {
   }
 
   try {
-    const parsed = JSON.parse(rawValue);
+    const parsed = JSON.parse(rawValue); //make the string into array again
 
     if (!Array.isArray(parsed)) {
       return [];
@@ -23,9 +23,10 @@ function readFromStorage() {
 
 function saveToStorage(applications) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(applications));
-}
+} //saves that string under our fixed key, overwriting whatever was there before
 
 export const applicationsRepository = {
+  //each a function living as a property on that object.
   getAll() {
     return readFromStorage();
   },
