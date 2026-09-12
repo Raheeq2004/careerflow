@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import { mockApplications } from "../data/mockApplications";
+import { applicationsRepository } from "../data/applicationsRepository";
 
 function AppLayout() {
-  const [applications, setApplications] = useState(mockApplications);
+  const [applications, setApplications] = useState(() =>
+    applicationsRepository.getAll(),
+  );
+
+  useEffect(() => {
+    applicationsRepository.saveAll(applications);
+  }, [applications]);
 
   function handleDelete(id) {
     setApplications((prev) => prev.filter((app) => app.id !== id));

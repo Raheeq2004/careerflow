@@ -3,9 +3,13 @@ import ApplicationForm from "../components/ApplicationForm";
 
 function EditApplicationPage() {
   const { applications, onFormSubmit } = useOutletContext();
+  //Gets the shared data (the full applications array) and the shared function (to actually save changes) — from AppLayout
   const { applicationId } = useParams();
+  //Reads the dynamic part of the current URL
   const navigate = useNavigate();
+  //Prepares the function used later to redirect back to the list after a successful save.
 
+  //find: it takes the ID from the URL, and uses it to look up the actual
   const applicationToEdit = applications.find(
     (app) => app.id === applicationId,
   );
@@ -36,3 +40,4 @@ function EditApplicationPage() {
 }
 
 export default EditApplicationPage;
+/**useParams reads which application's ID is in the URL, .find() uses that ID to locate the actual application object in the shared data, and that found object is what makes this page know it's editing (not creating) and lets the form pre-fill itself correctly. */
