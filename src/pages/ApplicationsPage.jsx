@@ -1,12 +1,26 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router";
+import { useApplicationsFeature } from "../context/useApplicationsFeature";
 import ApplicationCard from "../components/ApplicationCard";
 import ApplicationForm from "../components/ApplicationForm";
 import Button from "../components/Button";
 import styles from "./ApplicationsPage.module.css";
 
 function ApplicationsPage() {
-  const { applications, setApplications } = useOutletContext();
+  const {
+    applications,
+    sortedApplications,
+    searchText,
+    statusFilter,
+    workModeFilter,
+    sortBy,
+    hasActiveFilters,
+    updateParam,
+    clearFilters,
+    deleteApplication,
+    changeStatus,
+    submitApplication,
+  } = useApplicationsFeature();
+
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingApplication, setEditingApplication] = useState(null);
 
@@ -25,39 +39,8 @@ function ApplicationsPage() {
     setEditingApplication(null);
   }
 
-  function handleDelete(id) {
-    setApplications((prev) => prev.filter((app) => app.id !== id));
-  }
-
-  function handleStatusChange(id, newStatus) {
-    setApplications((prev) =>
-      prev.map((app) =>
-        app.id === id
-          ? { ...app, status: newStatus, updatedAt: new Date().toISOString() }
-          : app,
-      ),
-    );
-  }
-
   function handleFormSubmit(formData) {
-    if (editingApplication) {
-      setApplications((prev) =>
-        prev.map((app) =>
-          app.id === editingApplication.id
-            ? { ...app, ...formData, updatedAt: new Date().toISOString() }
-            : app,
-        ),
-      );
-    } else {
-      const newApplication = {
-        id: crypto.randomUUID(),
-        ...formData,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      setApplications((prev) => [...prev, newApplication]);
-    }
-
+    submitApplication(formData, editingApplication);
     setIsFormOpen(false);
     setEditingApplication(null);
   }
@@ -79,16 +62,70 @@ function ApplicationsPage() {
         />
       )}
 
+      <div className="flex flex-wrap gap-3 mb-4">
+        <input
+          type="text"
+          placeholder="Search by company or position..."
+          value={searchText}
+          onChange={(e) => updateParam("search", e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2 flex-1 min-w-[200px]"
+        />
+
+        <select
+          value={statusFilter}
+          onChange={(e) => updateParam("status", e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2"
+        >
+          <option value="">All Statuses</option>
+          <option value="applied">Applied</option>
+          <option value="screening">Screening</option>
+          <option value="interview">Interview</option>
+          <option value="offer">Offer</option>
+          <option value="rejected">Rejected</option>
+          <option value="withdrawn">Withdrawn</option>
+        </select>
+
+        <select
+          value={workModeFilter}
+          onChange={(e) => updateParam("workMode", e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2"
+        >
+          <option value="">All Work Modes</option>
+          <option value="on-site">On-site</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="remote">Remote</option>
+        </select>
+
+        <select
+          value={sortBy}
+          onChange={(e) => updateParam("sortBy", e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2"
+        >
+          <option value="newest">Newest Applied</option>
+          <option value="oldest">Oldest Applied</option>
+          <option value="recentlyUpdated">Recently Updated</option>
+          <option value="companyAZ">Company A-Z</option>
+        </select>
+
+        {hasActiveFilters && (
+          <Button onClick={clearFilters}>Clear Filters</Button>
+        )}
+      </div>
+
       {applications.length === 0 ? (
         <p className={styles.emptyState}>No applications yet.</p>
+      ) : sortedApplications.length === 0 ? (
+        <p className={styles.emptyState}>
+          No applications match your search or filters.
+        </p>
       ) : (
-        applications.map((application) => (
+        sortedApplications.map((application) => (
           <ApplicationCard
             key={application.id}
             application={application}
-            onDelete={handleDelete}
+            onDelete={deleteApplication}
             onEdit={handleEditClick}
-            onStatusChange={handleStatusChange}
+            onStatusChange={changeStatus}
           />
         ))
       )}

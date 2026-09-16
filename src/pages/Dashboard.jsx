@@ -1,9 +1,9 @@
-import { useOutletContext } from "react-router";
+import { useApplicationsFeature } from "../context/useApplicationsFeature";
 import StatCard from "../components/StatCard";
 import styles from "./Dashboard.module.css";
 
 function Dashboard() {
-  const { applications } = useOutletContext();
+  const { applications } = useApplicationsFeature();
 
   const total = applications.length;
 
