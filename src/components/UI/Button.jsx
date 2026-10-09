@@ -1,10 +1,15 @@
 import styles from "./Button.module.css";
 
-function Button({ children, variant, onClick, type }) {
+function Button({ children, variant, onClick, type, disabled }) {
   const buttonClass = variant === "danger" ? styles.danger : styles.primary;
 
   return (
-    <button className={buttonClass} onClick={onClick} type={type || "button"}>
+    <button
+      className={buttonClass}
+      onClick={onClick}
+      type={type || "button"}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

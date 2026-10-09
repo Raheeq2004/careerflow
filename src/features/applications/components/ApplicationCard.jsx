@@ -1,10 +1,13 @@
-import Button from "./Button";
-import styles from "./ApplicationCard.module.css";
+import { Link } from 'react-router';
+import Button from "../../../components/UI/Button";
+import styles from './ApplicationCard.module.css';
 
 function ApplicationCard({ application, onDelete, onEdit, onStatusChange }) {
   return (
     <div className={styles.card}>
-      <h3>{application.company}</h3>
+      <Link to={`/app/applications/${application.id}`} className="hover:underline">
+        <h3>{application.company}</h3>
+      </Link>
       <p>{application.position}</p>
 
       <select
@@ -24,9 +27,7 @@ function ApplicationCard({ application, onDelete, onEdit, onStatusChange }) {
 
       <div className={styles.cardActions}>
         <Button onClick={() => onEdit(application)}>Edit</Button>
-        <Button variant="danger" onClick={() => onDelete(application.id)}>
-          Delete
-        </Button>
+        <Button variant="danger" onClick={() => onDelete(application.id)}>Delete</Button>
       </div>
     </div>
   );

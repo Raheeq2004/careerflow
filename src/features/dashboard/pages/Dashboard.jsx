@@ -1,6 +1,7 @@
-import { useApplicationsFeature } from "../context/useApplicationsFeature";
-import StatCard from "../components/StatCard";
+import { useApplicationsFeature } from "../../applications/hooks/useApplicationsFeature";
+import StatCard from "../../../components/UI/StatCard";
 import styles from "./Dashboard.module.css";
+import UpcomingActions from "../components/UpcomingActions";
 
 function Dashboard() {
   const { applications } = useApplicationsFeature();
@@ -68,6 +69,8 @@ function Dashboard() {
           </div>
         )}
       </section>
+
+      <UpcomingActions />
     </div>
   );
 }

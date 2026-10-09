@@ -1,7 +1,7 @@
 //Separate "how data is shared" from "what to do with that data."
 
 import { useSearchParams } from "react-router";
-import { useApplications } from "./ApplicationsContext";
+import { useApplications } from "../../../context/ApplicationsContext";
 
 export function useApplicationsFeature() {
   const { applications, setApplications } = useApplications();

@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { applicationsRepository } from "../data/applicationsRepository";
+import { applicationsRepository } from "../features/applications/data/applicationsRepository";
 
 const ApplicationsContext = createContext(null);
 //genuinely is a JavaScript object, automatically built  by createContext()

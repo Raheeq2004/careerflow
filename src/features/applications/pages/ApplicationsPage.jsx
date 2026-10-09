@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { useApplicationsFeature } from "../context/useApplicationsFeature";
+import { useApplicationsFeature } from "../hooks/useApplicationsFeature";
+import { useInterviewsFeature } from "../../interviews/hooks/useInterviewsFeature";
 import ApplicationCard from "../components/ApplicationCard";
 import ApplicationForm from "../components/ApplicationForm";
-import Button from "../components/Button";
+import Button from "../../../components/UI/Button";
 import styles from "./ApplicationsPage.module.css";
+import Modal from "../../../components/UI/Modal";
 
 function ApplicationsPage() {
   const {
@@ -20,6 +22,8 @@ function ApplicationsPage() {
     changeStatus,
     submitApplication,
   } = useApplicationsFeature();
+
+  const { deleteInterviewsForApplication } = useInterviewsFeature();
 
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingApplication, setEditingApplication] = useState(null);
@@ -45,6 +49,11 @@ function ApplicationsPage() {
     setEditingApplication(null);
   }
 
+  function handleDeleteApplication(applicationId) {
+    deleteInterviewsForApplication(applicationId);
+    deleteApplication(applicationId);
+  }
+
   return (
     <div>
       <div className={styles.sectionHeader}>
@@ -55,11 +64,13 @@ function ApplicationsPage() {
       </div>
 
       {isFormOpen && (
-        <ApplicationForm
-          initialData={editingApplication}
-          onSubmit={handleFormSubmit}
-          onCancel={handleCancel}
-        />
+        <Modal onClose={handleCancel}>
+          <ApplicationForm
+            initialData={editingApplication}
+            onSubmit={handleFormSubmit}
+            onCancel={handleCancel}
+          />
+        </Modal>
       )}
 
       <div className="flex flex-wrap gap-3 mb-4">
@@ -123,7 +134,7 @@ function ApplicationsPage() {
           <ApplicationCard
             key={application.id}
             application={application}
-            onDelete={deleteApplication}
+            onDelete={handleDeleteApplication}
             onEdit={handleEditClick}
             onStatusChange={changeStatus}
           />
