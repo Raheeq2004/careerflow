@@ -1,8 +1,16 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router";
-import AppLayout from "./components/AppLayout";
-import Dashboard from "./pages/Dashboard";
-import ApplicationsPage from "./pages/ApplicationsPage";
+import AppLayout from "./components/UI/AppLayout";
 import NotFound from "./pages/NotFound";
+
+// Route-level code splitting: each page is downloaded only when its route is opened.
+const Dashboard = lazy(() => import("./features/dashboard/pages/Dashboard"));
+const ApplicationsPage = lazy(
+  () => import("./features/applications/pages/ApplicationsPage"),
+);
+const ApplicationDetailsPage = lazy(
+  () => import("./features/applications/pages/ApplicationDetailsPage"),
+);
 
 function App() {
   return (
@@ -10,6 +18,10 @@ function App() {
       <Route path="/app" element={<AppLayout />}>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="applications" element={<ApplicationsPage />} />
+        <Route
+          path="applications/:applicationId"
+          element={<ApplicationDetailsPage />}
+        />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
