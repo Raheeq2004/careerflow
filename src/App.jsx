@@ -12,10 +12,15 @@ const ApplicationDetailsPage = lazy(
   () => import("./features/applications/pages/ApplicationDetailsPage"),
 );
 
+
+const ProfilePage = lazy(() => import("./features/profile/pages/ProfilePage"));
+
+
 function App() {
   return (
     <Routes>
       <Route path="/app" element={<AppLayout />}>
+        <Route path="profile" element={<ProfilePage />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="applications" element={<ApplicationsPage />} />
         <Route
