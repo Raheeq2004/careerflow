@@ -2,6 +2,8 @@ import { lazy } from "react";
 import { Routes, Route } from "react-router";
 import AppLayout from "./components/UI/AppLayout";
 import NotFound from "./pages/NotFound";
+import LandingPage from "./features/landing/LandingPage";
+import SignupPage from "./features/auth/SignupPage";
 
 // Route-level code splitting: each page is downloaded only when its route is opened.
 const Dashboard = lazy(() => import("./features/dashboard/pages/Dashboard"));
@@ -28,6 +30,8 @@ function App() {
           element={<ApplicationDetailsPage />}
         />
       </Route>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
