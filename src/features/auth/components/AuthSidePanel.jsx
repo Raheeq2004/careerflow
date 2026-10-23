@@ -17,19 +17,14 @@ const panelCards = [
   },
 ];
 
-function AuthSidePanel() {
+function AuthSidePanel({ title, description }) {
   return (
     <aside className="hidden bg-brand-gradient p-12 text-white lg:flex lg:flex-col">
       <Logo tone="light" href="/" />
 
       <div className="my-auto max-w-md">
-        <h2 className="font-heading text-h2 font-bold">
-          Your whole job search, in one calm place
-        </h2>
-        <p className="mt-3 text-white/80">
-          Track applications, plan interviews and see your progress. Free, and
-          your data stays on your device.
-        </p>
+        <h2 className="font-heading text-h2 font-bold">{title}</h2>
+        <p className="mt-3 text-white/80">{description}</p>
 
         <ul className="mt-8 flex flex-col gap-3">
           {panelCards.map((card) => (
