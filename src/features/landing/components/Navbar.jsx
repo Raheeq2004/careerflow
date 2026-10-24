@@ -3,7 +3,11 @@ import { navLinks } from "../data/navLinks";
 
 import Logo from "../../../components/UI/Logo";
 
-function Navbar() {
+import { Link } from "react-router";
+
+const linkClasses = "rounded-control px-3 py-2 text-[15px] font-medium text-muted transition-colors hover:bg-brand-soft hover:text-brand";
+
+  function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur">
       <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 sm:px-6">
@@ -11,13 +15,16 @@ function Navbar() {
 
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="rounded-control px-3 py-2 text-[15px] font-medium text-muted transition-colors hover:bg-brand-soft hover:text-brand"
-              >
-                {link.label}
-              </a>
+            <li key={link.label}>
+              {link.to ? (
+                <Link to={link.to} className={linkClasses}>
+                  {link.label}
+                </Link>
+              ) : (
+                <a href={link.href} className={linkClasses}>
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
