@@ -21,8 +21,7 @@ function LoginForm() {
   });
 
   function onSubmit() {
-    // Demo behaviour: there is no backend or auth logic yet,
-    // so nobody is really logged in. We only go to the dashboard.
+    // Demo behaviour , We only go to the dashboard.
     navigate("/app/dashboard");
   }
 

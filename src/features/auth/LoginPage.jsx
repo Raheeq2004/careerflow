@@ -25,7 +25,7 @@ function LoginPage() {
           Sign Up
         </Link>
       </p>
-    </AuthLayout>
+    </AuthLayout>// while in the loogin page we send data , to change the defualt
   );
 }
 
