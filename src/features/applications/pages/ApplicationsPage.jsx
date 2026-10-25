@@ -4,7 +4,6 @@ import { useInterviewsFeature } from "../../interviews/hooks/useInterviewsFeatur
 import ApplicationCard from "../components/ApplicationCard";
 import ApplicationForm from "../components/ApplicationForm";
 import Button from "../../../components/UI/Button";
-import styles from "./ApplicationsPage.module.css";
 import Modal from "../../../components/UI/Modal";
 
 function ApplicationsPage() {
@@ -53,13 +52,27 @@ function ApplicationsPage() {
     deleteInterviewsForApplication(applicationId);
     deleteApplication(applicationId);
   }
+  
+  const controlClasses =
+    "min-h-11 w-full rounded-control border border-line bg-white px-3 text-[15px] text-ink placeholder:text-muted/60 focus-visible:outline-2 focus-visible:outline-brand sm:w-auto";
+
+  const emptyClasses =
+    "rounded-card border border-line bg-white px-5 py-10 text-center text-muted shadow-card";
 
   return (
-    <div>
-      <div className={styles.sectionHeader}>
-        <h2>Recent Applications</h2>
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 className="font-heading text-2xl font-extrabold text-navy md:text-h2">
+            Applications
+          </h2>
+          <p className="mt-1 text-muted">
+            {sortedApplications.length}{" "}
+            {sortedApplications.length === 1 ? "application" : "applications"}
+          </p>
+        </div>
         {!isFormOpen && (
-          <Button onClick={handleAddClick}>Add Application</Button>
+          <Button onClick={handleAddClick}>+ Add Application</Button>
         )}
       </div>
 
@@ -73,19 +86,21 @@ function ApplicationsPage() {
         </Modal>
       )}
 
-      <div className="flex flex-wrap gap-3 mb-4">
+      <div className="flex flex-col gap-3 rounded-card border border-line bg-white p-4 shadow-card sm:flex-row sm:flex-wrap">
         <input
           type="text"
+          aria-label="Search applications"
           placeholder="Search by company or position..."
           value={searchText}
           onChange={(e) => updateParam("search", e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2 flex-1 min-w-[200px]"
+          className={`${controlClasses} sm:min-w-60 sm:flex-1`}
         />
 
         <select
+          aria-label="Filter by status"
           value={statusFilter}
           onChange={(e) => updateParam("status", e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2"
+          className={controlClasses}
         >
           <option value="">All Statuses</option>
           <option value="applied">Applied</option>
@@ -97,9 +112,10 @@ function ApplicationsPage() {
         </select>
 
         <select
+          aria-label="Filter by work mode"
           value={workModeFilter}
           onChange={(e) => updateParam("workMode", e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2"
+          className={controlClasses}
         >
           <option value="">All Work Modes</option>
           <option value="on-site">On-site</option>
@@ -108,9 +124,10 @@ function ApplicationsPage() {
         </select>
 
         <select
+          aria-label="Sort applications"
           value={sortBy}
           onChange={(e) => updateParam("sortBy", e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2"
+          className={controlClasses}
         >
           <option value="newest">Newest Applied</option>
           <option value="oldest">Oldest Applied</option>
@@ -119,26 +136,30 @@ function ApplicationsPage() {
         </select>
 
         {hasActiveFilters && (
-          <Button onClick={clearFilters}>Clear Filters</Button>
+          <Button variant="outline" onClick={clearFilters}>
+            Clear Filters
+          </Button>
         )}
       </div>
 
       {applications.length === 0 ? (
-        <p className={styles.emptyState}>No applications yet.</p>
+        <p className={emptyClasses}>No applications yet.</p>
       ) : sortedApplications.length === 0 ? (
-        <p className={styles.emptyState}>
+        <p className={emptyClasses}>
           No applications match your search or filters.
         </p>
       ) : (
-        sortedApplications.map((application) => (
-          <ApplicationCard
-            key={application.id}
-            application={application}
-            onDelete={handleDeleteApplication}
-            onEdit={handleEditClick}
-            onStatusChange={changeStatus}
-          />
-        ))
+        <div className="flex flex-col gap-3">
+          {sortedApplications.map((application) => (
+            <ApplicationCard
+              key={application.id}
+              application={application}
+              onDelete={handleDeleteApplication}
+              onEdit={handleEditClick}
+              onStatusChange={changeStatus}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

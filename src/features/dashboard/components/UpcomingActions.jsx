@@ -14,35 +14,38 @@ function UpcomingActions() {
   const { upcomingActions } = useUpcomingActions();
 
   return (
-    <section className="mt-4">
-      <h2 className="text-xl font-bold mb-4">Upcoming Actions</h2>
+    <section className="overflow-hidden rounded-card border border-line bg-white shadow-card">
+      <div className="border-b border-line px-5 py-4">
+        <h3 className="font-heading text-lg font-bold text-navy">
+          Upcoming Actions
+        </h3>
+      </div>
 
       {upcomingActions.length === 0 ? (
-        <p className="text-gray-500 text-center py-8">
+        <p className="px-5 py-8 text-center text-muted">
           Nothing upcoming right now.
         </p>
       ) : (
-        <div className="flex flex-col gap-3">
+        <div className="divide-y divide-line">
           {upcomingActions.map((action) => (
             <div
               key={action.id}
-              className={`bg-white border rounded-lg p-4 flex justify-between items-center ${
-                action.isOverdue ? "border-red-300" : "border-gray-200"
-              }`}
+              className="flex items-start justify-between gap-3 px-5 py-4"
             >
               <div>
-                <h3 className="font-bold">{action.title}</h3>
+                <h4 className="font-semibold text-navy">{action.title}</h4>
                 {action.description && (
-                  <p className="text-gray-600 text-sm">{action.description}</p>
+                  <p className="text-sm text-muted">{action.description}</p>
                 )}
               </div>
-              <div className="text-right">
+              <div className="flex flex-col items-end gap-1.5">
                 {action.isOverdue && (
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 mb-1">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-danger-soft px-2.5 py-0.5 text-xs font-semibold text-navy">
+                    <span className="size-2 rounded-full bg-danger" />
                     Overdue
                   </span>
                 )}
-                <p className="text-xs text-gray-400">
+                <p className="text-[13px] text-muted">
                   {formatDate(action.date)}
                 </p>
               </div>

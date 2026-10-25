@@ -25,6 +25,10 @@
   --color-danger: #dc2626;
   --color-warn: #f59e0b;
 
+    --color-success-soft: #dcfce7;
+  --color-warn-soft: #fef3c7;
+  --color-danger-soft: #fee2e2;
+
   /* ---------- Radius ---------- */
   --radius-control: 10px;
   --radius-card: 16px;

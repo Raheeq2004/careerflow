@@ -4,6 +4,7 @@ import AppLayout from "./components/UI/AppLayout";
 import NotFound from "./pages/NotFound";
 import LandingPage from "./features/landing/LandingPage";
 import SignupPage from "./features/auth/SignupPage";
+import LoginPage from "./features/auth/LoginPage";
 
 // Route-level code splitting: each page is downloaded only when its route is opened.
 const Dashboard = lazy(() => import("./features/dashboard/pages/Dashboard"));
@@ -32,6 +33,7 @@ function App() {
       </Route>
       <Route path="/" element={<LandingPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

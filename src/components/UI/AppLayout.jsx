@@ -1,9 +1,9 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router';
-import Sidebar from './Sidebar';
-import Header from './Header';
-import { ApplicationsProvider } from '../../context/ApplicationsContext';
-import { InterviewsProvider } from '../../context/InterviewsContext';
+import { Suspense } from "react";
+import { Outlet } from "react-router";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import { ApplicationsProvider } from "../../context/ApplicationsContext";
+import { InterviewsProvider } from "../../context/InterviewsContext";
 import { ProfileProvider } from "../../context/ProfileContext";
 
 function AppLayout() {
@@ -11,15 +11,12 @@ function AppLayout() {
     <ApplicationsProvider>
       <InterviewsProvider>
         <ProfileProvider>
-          {" "}
-          <div className="flex flex-col md:flex-row min-h-screen">
+          <div className="flex min-h-screen flex-col bg-page font-sans text-ink md:flex-row">
             <Sidebar />
-            <div className="flex-1 flex flex-col">
+            <div className="flex flex-1 flex-col">
               <Header />
-              <main className="p-4 flex-1">
-                <Suspense
-                  fallback={<p className="text-gray-500">Loading...</p>}
-                >
+              <main className="flex-1 p-4 md:p-6">
+                <Suspense fallback={<p className="text-muted">Loading...</p>}>
                   <Outlet />
                 </Suspense>
               </main>

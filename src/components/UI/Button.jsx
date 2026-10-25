@@ -1,13 +1,29 @@
-import styles from "./Button.module.css";
+const base =
+  "inline-flex min-h-11 items-center justify-center rounded-control px-5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:cursor-not-allowed disabled:opacity-60";
 
-function Button({ children, variant, onClick, type, disabled }) {
-  const buttonClass = variant === "danger" ? styles.danger : styles.primary;
+// variant word -> class string (lookup object, O(1))
+const variants = {
+  primary: "bg-brand text-white hover:bg-brand-hover",
+  outline: "border border-line bg-white text-ink hover:bg-page",
+  danger:
+    "border border-danger/30 bg-danger-soft text-red-700 hover:bg-danger/15",
+};
+
+function Button({
+  children,
+  variant = "primary",
+  onClick,
+  type = "button",
+  disabled,
+  className = "",
+}) {
+  const classes = `${base} ${variants[variant] ?? variants.primary} ${className}`;
 
   return (
     <button
-      className={buttonClass}
+      className={classes}
       onClick={onClick}
-      type={type || "button"}
+      type={type}
       disabled={disabled}
     >
       {children}
@@ -16,19 +32,3 @@ function Button({ children, variant, onClick, type, disabled }) {
 }
 
 export default Button;
-
-//React automatically takes "Delete" (the text sitting between <Button> and </Button>) and hands it to the component as children.
-
-/*<Button variant="danger">Delete</Button>
-<Button>Edit</Button>
-
-Notice the second one doesn't pass variant at all 
-— meaning inside the component, variant will be undefined */
-
-//Making onClick a prop means Button stays completely generic and reusable, while the actual behavior lives with whoever placed it.
-
-/*If type wasn't provided, it falls back to "button" (safe default, does nothing special on click besides running onClick). If type="submit" was explicitly given, it keeps that instead, letting this specific button trigger form submission. */
-
-/*danger and primary — what they actually are
-
-They are not props. This is an important distinction: danger and primary are just string values that the variant prop can hold. They're also the names of two CSS classes, defined in Button.module.css */

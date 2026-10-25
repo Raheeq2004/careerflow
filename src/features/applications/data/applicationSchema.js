@@ -16,7 +16,8 @@ export const applicationSchema = z.object({
 
   location: z.string().optional(),
 
-  workMode: z.enum(Object.values(WORK_MODE_LABELS)),
+  
+  workMode: z.enum(Object.keys(WORK_MODE_LABELS)),
 
   // Optional, but must be a real URL if the user types something in.
   jobUrl: z

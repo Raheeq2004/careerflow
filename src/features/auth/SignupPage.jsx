@@ -22,7 +22,7 @@ function SignupPage() {
           Log in
         </Link>
       </p>
-    </AuthLayout>
+    </AuthLayout>//no data is sent , so its the defula 
   );
 }
 
