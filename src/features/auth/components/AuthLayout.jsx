@@ -15,7 +15,7 @@ function AuthLayout({
       <main className="flex items-center justify-center bg-white px-4 py-10 sm:px-6">
         <div className="w-full max-w-sm">
           <div className="mb-8 lg:hidden">
-            <Logo href="/" />
+            <Logo tone="light" to="/" />
             <div className="mt-4 rounded-card bg-brand-gradient px-4 py-3 text-white">
               <p className="text-sm font-semibold">{bannerTitle}</p>
               <p className="text-xs text-white/80">{bannerText}</p>

@@ -20,7 +20,7 @@ const panelCards = [
 function AuthSidePanel({ title, description }) {
   return (
     <aside className="hidden bg-brand-gradient p-12 text-white lg:flex lg:flex-col">
-      <Logo tone="light" href="/" />
+      <Logo tone="light"  to="/" />
 
       <div className="my-auto max-w-md">
         <h2 className="font-heading text-h2 font-bold">{title}</h2>
