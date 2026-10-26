@@ -24,7 +24,7 @@ function FormField({
           aria-invalid={error ? "true" : undefined}
           aria-describedby={describedBy}
           className={`w-full rounded-control border bg-white py-2.5 text-sm text-ink placeholder:text-muted/60 focus-visible:outline-2 focus-visible:outline-brand ${
-            action ? "pl-3 pr-16" : "px-3"
+            action ? "ps-3 pe-16" : "px-3"
           } ${error ? "border-danger" : "border-line"}`}
           {...rest}
         />

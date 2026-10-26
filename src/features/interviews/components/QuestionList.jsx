@@ -42,7 +42,7 @@ function QuestionList({ interviewId }) {
   }
 
   return (
-    <div className="mt-4 pl-4 border-l-2 border-gray-200 space-y-3">
+    <div className="mt-4 ps-4 border-s-2 border-gray-200 space-y-3">
       <p className="text-sm font-semibold text-gray-700">Questions</p>
 
       {questions.length === 0 && !isFormOpen && (

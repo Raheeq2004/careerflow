@@ -66,13 +66,13 @@ function HeroPreview() {
         title="Interview tomorrow"
         detail="10:00 · Acme Studio"
         dotClass="bg-accent"
-        className="left-3 top-3 lg:-left-10 lg:top-0"
+        className="inset-s-3 ... lg:-inset-s-10 lg:top-0"
       />
       <FloatingNotice
         title="New offer received"
         detail="Bluepeak · Remote"
         dotClass="bg-warn"
-        className="bottom-3 right-3 lg:bottom-6 lg:right-6"
+        className="bottom-3 inset-e-3 ... lg:inset-e-6"
       />
     </div>
   );

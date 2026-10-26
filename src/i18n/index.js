@@ -29,10 +29,7 @@ i18n
     }, //Save the choice in the chaches
     interpolation: { escapeValue: false },
 
-
-
   });
 
-  
 
 export default i18n;

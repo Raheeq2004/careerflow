@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 //useRef + useEffect: outside click and Escape work only while the menu is open,
 const itemClasses =
-  "flex min-h-11 w-full items-center gap-2.5 rounded-control px-3 text-left text-sm font-medium hover:bg-page focus-visible:outline-2 focus-visible:outline-brand";
+  "flex min-h-11 w-full items-center gap-2.5 rounded-control px-3 text-start text-sm font-medium hover:bg-page focus-visible:outline-2 focus-visible:outline-brand";
 //Profile and Log out. Both need the same look
 
 function Icon({ children, className = "" }) {
@@ -68,7 +68,7 @@ function ProfileMenu({ name }) {
         aria-label="Open profile menu"
         aria-haspopup="menu"
         aria-expanded={open}
-        className="flex min-h-11 items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3 hover:bg-page focus-visible:outline-2 focus-visible:outline-brand"
+        className="flex min-h-11 items-center gap-2 rounded-full border border-line bg-white py-1 ps-1 pe-3 hover:bg-page focus-visible:outline-2 focus-visible:outline-brand"
       >
         <span className="grid size-9 place-items-center rounded-full bg-brand text-[15px] font-semibold text-white">
           {initial}
@@ -77,17 +77,17 @@ function ProfileMenu({ name }) {
           <path d="M6 9l6 6 6-6" />
         </Icon>
       </button>
-        
+
       {open && (
         <div
           role="menu"
-          className="absolute right-0 top-full z-20 mt-2 w-56 rounded-card border border-line bg-white p-1.5 shadow-float"
+          className="absolute inset-e-0 top-full z-20 mt-2 w-56 rounded-card border border-line bg-white p-1.5 shadow-float"
         >
           <Link
             to="/app/profile"
             role="menuitem"
             onClick={() => setOpen(false)}
-            className={`${itemClasses} text-ink`}//page
+            className={`${itemClasses} text-ink`} //page
           >
             <Icon className="text-muted">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -102,7 +102,7 @@ function ProfileMenu({ name }) {
             type="button"
             role="menuitem"
             onClick={handleLogout}
-            className={`${itemClasses} text-danger`}//logout
+            className={`${itemClasses} text-danger`} //logout
           >
             <Icon>
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />

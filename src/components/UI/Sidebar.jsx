@@ -16,7 +16,7 @@ function linkClasses({ isActive }) {
 
 function Sidebar() {
   return (
-    <aside className="w-full border-b border-line bg-white p-4 md:w-[220px] md:border-b-0 md:border-r">
+    <aside className="w-full border-b border-line bg-white p-4 md:w-[220px] md:border-b-0 md:border-e">
       <div className="mb-6">
         <Logo to="/app/dashboard" />
       </div>

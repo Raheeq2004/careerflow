@@ -13,7 +13,7 @@ const panelCards = [
     title: "New offer received",
     detail: "Bluepeak · Remote",
     dotClass: "bg-warn",
-    className: "ml-16",
+    className: "ms-16",
   },
 ];
 
@@ -43,7 +43,7 @@ function AuthSidePanel({ title, description }) {
                 <p className="text-xs text-muted">{card.detail}</p>
               </div>
               {card.badge && (
-                <span className="ml-4 rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">
+                <span className="ms-4 rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">
                   {card.badge}
                 </span>
               )}

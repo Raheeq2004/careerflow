@@ -65,7 +65,7 @@ function ApplicationDetailsPage() {
                 {application.position}
               </p>
             </div>
-            <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold capitalize bg-gray-200 text-gray-700 shrink-0 ml-4">
+            <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold capitalize bg-gray-200 text-gray-700 shrink-0 ms-4">
               {application.status}
             </span>
           </div>

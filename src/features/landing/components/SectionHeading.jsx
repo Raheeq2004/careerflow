@@ -1,5 +1,5 @@
 function SectionHeading({ eyebrow, title, description, align = "center" }) {
-      const alignment = align === "left" ? "text-left" : "mx-auto text-center";
+      const alignment = align === "left" ? "text-start" : "mx-auto text-center";
 
   return (
     <div className={`max-w-2xl ${alignment}`}>

@@ -14,7 +14,7 @@ function PasswordField(props) {
           type="button"
           onClick={() => setVisible(!visible)}
           aria-label={visible ? "Hide password" : "Show password"}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-brand hover:text-brand-hover"
+          className="absolute inset-e-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-brand hover:text-brand-hover"
         >
           {visible ? "Hide" : "Show"}
         </button>
