@@ -3,8 +3,10 @@ import { useApplicationsFeature } from "../../applications/hooks/useApplications
 import StatCard from "../../../components/UI/StatCard";
 import StatusBadge from "../../../components/UI/StatusBadge";
 import UpcomingActions from "../components/UpcomingActions";
+import { useTranslation } from "react-i18next";
 
 function Dashboard() {
+  const { t, i18n } = useTranslation();
   const { applications } = useApplicationsFeature();
 
   const total = applications.length;
@@ -34,12 +36,19 @@ function Dashboard() {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="font-heading text-2xl font-extrabold text-navy md:text-h2">
-            Dashboard
+            {t("dashboard.title")}
           </h2>
-          <p className="mt-1 text-muted">
-            Here is where your job search stands today.
-          </p>
+          <p className="mt-1 text-muted">{t("dashboard.subtitle")}</p>
         </div>
+        <button
+          type="button"
+          onClick={() =>
+            i18n.changeLanguage(i18n.resolvedLanguage === "ar" ? "en" : "ar")
+          } //i18n.changeLanguage(...) switches the language.
+          className="rounded-control border border-line bg-white px-4 py-2 text-sm"
+        >
+          {i18n.resolvedLanguage === "ar" ? "EN" : "عربي"}
+        </button>
         <Link
           to="/app/applications"
           className="inline-flex min-h-11 items-center rounded-control border border-line bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-page focus-visible:outline-2 focus-visible:outline-brand"
