@@ -1,9 +1,9 @@
-
-
 {
   "common": {
     "show": "Show",
-    "hide": "Hide"
+    "hide": "Hide",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -28,23 +28,39 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "subtitle": "Here is where your job search stands today."
+    "subtitle": "Here is where your job search stands today.",
+    "viewAllApplications": "View all applications",
+    "stats": {
+      "total": "Total Applications",
+      "active": "Active Applications",
+      "interviews": "Interviews",
+      "offers": "Offers",
+      "rejected": "Rejected"
+    },
+    "recent": {
+      "title": "Recent Applications",
+      "viewAll": "View all",
+      "empty": "No applications yet."
+    },
+    "upcoming": {
+      "title": "Upcoming Actions",
+      "empty": "Nothing upcoming right now.",
+      "overdue": "Overdue",
+      "followUp": "Follow up",
+      "interviewTitle": "{{company}} — {{type}} Interview",
+      "interviewTitleNoCompany": "{{type}} Interview"
+    }
   },
-
-  "common": {
-    "show": "Show",
-    "hide": "Hide",
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+  "interviews": {
+    "types": {
+      "HR": "HR",
+      "Technical": "Technical",
+      "Behavioral": "Behavioral",
+      "Final": "Final"
+    }
   },
   "auth": {
     "fullName": "Full name",
-     "layout": {
-    "title": "Your whole job search, in one calm place",
-    "description": "Track applications, plan interviews and see your progress. Free, and your data stays on your device.",
-    "bannerTitle": "Free, and private by design",
-    "bannerText": "Your data stays on your device."
-  },
     "fullNamePlaceholder": "Your name",
     "email": "Email address",
     "emailPlaceholder": "you@example.com",
@@ -82,6 +98,12 @@
       "interviewBadge": "Interview",
       "offerTitle": "New offer received",
       "offerDetail": "Bluepeak · Remote"
+    },
+    "layout": {
+      "title": "Your whole job search, in one calm place",
+      "description": "Track applications, plan interviews and see your progress. Free, and your data stays on your device.",
+      "bannerTitle": "Free, and private by design",
+      "bannerText": "Your data stays on your device."
     },
     "errors": {
       "emailInvalid": "Enter a valid email address",
