@@ -1,5 +1,6 @@
 import { useProfile } from "../../context/ProfileContext";//for the data from the provider
 import ProfileMenu from "./ProfileMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
   const { profile } = useProfile();
@@ -13,7 +14,10 @@ function Header() {
       <h1 className="font-heading text-lg font-bold text-navy md:text-xl">
         {firstName ? `Welcome back, ${firstName}` : "Welcome back"}
       </h1>
-      <ProfileMenu name={name} />
+      <div className="flex items-center gap-2">
+        <LanguageSwitcher />
+        <ProfileMenu name={name} />
+      </div>
     </header>
   );
 }

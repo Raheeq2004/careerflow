@@ -1,6 +1,8 @@
 import Logo from "../../../components/UI/Logo";
 import AuthSidePanel from "./AuthSidePanel";
 
+import LanguageSwitcher from "../../../components/UI/LanguageSwitcher";
+
 function AuthLayout({
   children,
   title = "Your whole job search, in one calm place",
@@ -14,6 +16,9 @@ function AuthLayout({
 
       <main className="flex items-center justify-center bg-white px-4 py-10 sm:px-6">
         <div className="w-full max-w-sm">
+          <div className="mb-6 flex justify-end">
+            <LanguageSwitcher />
+          </div>
           <div className="mb-8 lg:hidden">
             <Logo tone="light" to="/" />
             <div className="mt-4 rounded-card bg-brand-gradient px-4 py-3 text-white">
