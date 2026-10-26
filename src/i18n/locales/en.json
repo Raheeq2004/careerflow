@@ -3,7 +3,9 @@
     "show": "Show",
     "hide": "Hide",
     "showPassword": "Show password",
-    "hidePassword": "Hide password"
+    "hidePassword": "Hide password",
+    "edit": "Edit",
+    "delete": "Delete"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -50,6 +52,35 @@
       "interviewTitle": "{{company}} — {{type}} Interview",
       "interviewTitleNoCompany": "{{type}} Interview"
     }
+  },
+  "applications": {
+    "title": "Applications",
+    "count_one": "{{count}} application",
+    "count_other": "{{count}} applications",
+    "add": "+ Add Application",
+    "searchLabel": "Search applications",
+    "searchPlaceholder": "Search by company or position...",
+    "filterStatus": "Filter by status",
+    "allStatuses": "All Statuses",
+    "filterWorkMode": "Filter by work mode",
+    "allWorkModes": "All Work Modes",
+    "sortLabel": "Sort applications",
+    "clearFilters": "Clear Filters",
+    "empty": "No applications yet.",
+    "noMatch": "No applications match your search or filters.",
+    "changeStatus": "Change status for {{company}}",
+    "appliedOn": "Applied on {{date}}"
+  },
+  "workMode": {
+    "on-site": "On-site",
+    "hybrid": "Hybrid",
+    "remote": "Remote"
+  },
+  "sort": {
+    "newest": "Newest Applied",
+    "oldest": "Oldest Applied",
+    "recentlyUpdated": "Recently Updated",
+    "companyAZ": "Company A-Z"
   },
   "interviews": {
     "types": {
@@ -113,35 +144,6 @@
       "confirmRequired": "Confirm your password",
       "termsRequired": "You must agree to continue",
       "passwordMismatch": "Passwords do not match"
-    },
-    "applications": {
-      "title": "Applications",
-      "count_one": "{{count}} application",
-      "count_other": "{{count}} applications",
-      "add": "+ Add Application",
-      "searchLabel": "Search applications",
-      "searchPlaceholder": "Search by company or position...",
-      "filterStatus": "Filter by status",
-      "allStatuses": "All Statuses",
-      "filterWorkMode": "Filter by work mode",
-      "allWorkModes": "All Work Modes",
-      "sortLabel": "Sort applications",
-      "clearFilters": "Clear Filters",
-      "empty": "No applications yet.",
-      "noMatch": "No applications match your search or filters.",
-      "changeStatus": "Change status for {{company}}",
-      "appliedOn": "Applied on {{date}}"
-    },
-    "workMode": {
-      "on-site": "On-site",
-      "hybrid": "Hybrid",
-      "remote": "Remote"
-    },
-    "sort": {
-      "newest": "Newest Applied",
-      "oldest": "Oldest Applied",
-      "recentlyUpdated": "Recently Updated",
-      "companyAZ": "Company A-Z"
     }
   }
 }

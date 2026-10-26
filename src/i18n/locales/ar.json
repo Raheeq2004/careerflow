@@ -3,7 +3,9 @@
     "show": "إظهار",
     "hide": "إخفاء",
     "showPassword": "إظهار كلمة المرور",
-    "hidePassword": "إخفاء كلمة المرور"
+    "hidePassword": "إخفاء كلمة المرور",
+    "edit": "تعديل",
+    "delete": "حذف"
   },
   "nav": {
     "dashboard": "لوحة التحكم",
@@ -50,6 +52,39 @@
       "interviewTitle": "{{company}} — مقابلة {{type}}",
       "interviewTitleNoCompany": "مقابلة {{type}}"
     }
+  },
+  "applications": {
+    "title": "الطلبات",
+    "count_zero": "لا توجد طلبات",
+    "count_one": "طلب واحد",
+    "count_two": "طلبان",
+    "count_few": "{{count}} طلبات",
+    "count_many": "{{count}} طلباً",
+    "count_other": "{{count}} طلب",
+    "add": "+ إضافة طلب",
+    "searchLabel": "البحث في الطلبات",
+    "searchPlaceholder": "ابحث باسم الشركة أو المسمى الوظيفي...",
+    "filterStatus": "تصفية حسب الحالة",
+    "allStatuses": "كل الحالات",
+    "filterWorkMode": "تصفية حسب نمط العمل",
+    "allWorkModes": "كل أنماط العمل",
+    "sortLabel": "ترتيب الطلبات",
+    "clearFilters": "مسح التصفية",
+    "empty": "لا توجد طلبات بعد.",
+    "noMatch": "لا توجد طلبات تطابق بحثك أو التصفية.",
+    "changeStatus": "تغيير حالة {{company}}",
+    "appliedOn": "تم التقديم بتاريخ {{date}}"
+  },
+  "workMode": {
+    "on-site": "في المقر",
+    "hybrid": "هجين",
+    "remote": "عن بُعد"
+  },
+  "sort": {
+    "newest": "الأحدث تقديماً",
+    "oldest": "الأقدم تقديماً",
+    "recentlyUpdated": "المحدّثة مؤخراً",
+    "companyAZ": "الشركة (أ-ي)"
   },
   "interviews": {
     "types": {
@@ -113,39 +148,6 @@
       "confirmRequired": "أكّد كلمة المرور",
       "termsRequired": "يجب الموافقة للمتابعة",
       "passwordMismatch": "كلمتا المرور غير متطابقتين"
-    },
-    "applications": {
-      "title": "الطلبات",
-      "count_zero": "لا توجد طلبات",
-      "count_one": "طلب واحد",
-      "count_two": "طلبان",
-      "count_few": "{{count}} طلبات",
-      "count_many": "{{count}} طلباً",
-      "count_other": "{{count}} طلب",
-      "add": "+ إضافة طلب",
-      "searchLabel": "البحث في الطلبات",
-      "searchPlaceholder": "ابحث باسم الشركة أو المسمى الوظيفي...",
-      "filterStatus": "تصفية حسب الحالة",
-      "allStatuses": "كل الحالات",
-      "filterWorkMode": "تصفية حسب نمط العمل",
-      "allWorkModes": "كل أنماط العمل",
-      "sortLabel": "ترتيب الطلبات",
-      "clearFilters": "مسح التصفية",
-      "empty": "لا توجد طلبات بعد.",
-      "noMatch": "لا توجد طلبات تطابق بحثك أو التصفية.",
-      "changeStatus": "تغيير حالة {{company}}",
-      "appliedOn": "تم التقديم بتاريخ {{date}}"
-    },
-    "workMode": {
-      "on-site": "في المقر",
-      "hybrid": "هجين",
-      "remote": "عن بُعد"
-    },
-    "sort": {
-      "newest": "الأحدث تقديماً",
-      "oldest": "الأقدم تقديماً",
-      "recentlyUpdated": "المحدّثة مؤخراً",
-      "companyAZ": "الشركة (أ-ي)"
     }
   }
 }
