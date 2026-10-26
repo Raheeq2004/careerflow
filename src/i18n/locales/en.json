@@ -1,6 +1,40 @@
+
+
 {
+  "common": {
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "applications": "Applications"
+  },
+  "header": {
+    "welcomeBack": "Welcome back",
+    "welcomeBackName": "Welcome back, {{name}}"
+  },
+  "profileMenu": {
+    "open": "Open profile menu",
+    "profile": "Profile",
+    "logout": "Log out"
+  },
+  "status": {
+    "applied": "Applied",
+    "screening": "Screening",
+    "interview": "Interview",
+    "offer": "Offer",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
   "dashboard": {
     "title": "Dashboard",
     "subtitle": "Here is where your job search stands today."
-  }
+  },
+
+  "common": {
+  "show": "Show",
+  "hide": "Hide",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password"
+}
 }

@@ -1,6 +1,37 @@
 {
+  "common": {
+    "show": "إظهار",
+    "hide": "إخفاء"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "applications": "الطلبات"
+  },
+  "header": {
+    "welcomeBack": "مرحباً بعودتك",
+    "welcomeBackName": "مرحباً بعودتك، {{name}}"
+  },
+  "profileMenu": {
+    "open": "فتح قائمة الملف الشخصي",
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج"
+  },
+  "status": {
+    "applied": "تم التقديم",
+    "screening": "قيد الفرز",
+    "interview": "مقابلة",
+    "offer": "عرض",
+    "rejected": "مرفوض",
+    "withdrawn": "تم السحب"
+  },
   "dashboard": {
     "title": "لوحة التحكم",
     "subtitle": "هنا تجد وضع بحثك عن عمل اليوم."
+  },
+  "common": {
+    "show": "إظهار",
+    "hide": "إخفاء",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور"
   }
 }

@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 //useRef + useEffect: outside click and Escape work only while the menu is open,
+
+import { useTranslation } from "react-i18next";
+
 const itemClasses =
   "flex min-h-11 w-full items-center gap-2.5 rounded-control px-3 text-start text-sm font-medium hover:bg-page focus-visible:outline-2 focus-visible:outline-brand";
 //Profile and Log out. Both need the same look
@@ -26,6 +29,8 @@ function Icon({ children, className = "" }) {
 }     //drawing come in the children ,path id : is a list of pen moves
 
 function ProfileMenu({ name }) {
+  const { t } = useTranslation();
+
   const [open, setOpen] = useState(false); //is the menu visible? It starts closed
   const menuRef = useRef(null);
   const navigate = useNavigate();
@@ -65,7 +70,7 @@ function ProfileMenu({ name }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        aria-label="Open profile menu"
+        aria-label={t("profileMenu.open")}
         aria-haspopup="menu"
         aria-expanded={open}
         className="flex min-h-11 items-center gap-2 rounded-full border border-line bg-white py-1 ps-1 pe-3 hover:bg-page focus-visible:outline-2 focus-visible:outline-brand"
@@ -93,7 +98,7 @@ function ProfileMenu({ name }) {
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </Icon>
-            Profile
+            {t("profileMenu.profile")}
           </Link>
 
           <div className="mx-1.5 my-1 h-px bg-line" />
@@ -109,7 +114,7 @@ function ProfileMenu({ name }) {
               <path d="M16 17l5-5-5-5" />
               <path d="M21 12H9" />
             </Icon>
-            Log out
+            {t("profileMenu.logout")}
           </button>
         </div>
       )}
