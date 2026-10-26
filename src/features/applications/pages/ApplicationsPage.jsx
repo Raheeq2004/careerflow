@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useApplicationsFeature } from "../hooks/useApplicationsFeature";
 import { useInterviewsFeature } from "../../interviews/hooks/useInterviewsFeature";
 import ApplicationCard from "../components/ApplicationCard";
@@ -6,7 +7,19 @@ import ApplicationForm from "../components/ApplicationForm";
 import Button from "../../../components/UI/Button";
 import Modal from "../../../components/UI/Modal";
 
+const statusOptions = [
+  "applied",
+  "screening",
+  "interview",
+  "offer",
+  "rejected",
+  "withdrawn",
+];
+const workModeOptions = ["on-site", "hybrid", "remote"];
+const sortOptions = ["newest", "oldest", "recentlyUpdated", "companyAZ"];
+
 function ApplicationsPage() {
+  const { t } = useTranslation();
   const {
     applications,
     sortedApplications,
@@ -52,7 +65,7 @@ function ApplicationsPage() {
     deleteInterviewsForApplication(applicationId);
     deleteApplication(applicationId);
   }
-  
+
   const controlClasses =
     "min-h-11 w-full rounded-control border border-line bg-white px-3 text-[15px] text-ink placeholder:text-muted/60 focus-visible:outline-2 focus-visible:outline-brand sm:w-auto";
 
@@ -64,15 +77,14 @@ function ApplicationsPage() {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="font-heading text-2xl font-extrabold text-navy md:text-h2">
-            Applications
+            {t("applications.title")}
           </h2>
           <p className="mt-1 text-muted">
-            {sortedApplications.length}{" "}
-            {sortedApplications.length === 1 ? "application" : "applications"}
+            {t("applications.count", { count: sortedApplications.length })}
           </p>
         </div>
         {!isFormOpen && (
-          <Button onClick={handleAddClick}>+ Add Application</Button>
+          <Button onClick={handleAddClick}>{t("applications.add")}</Button>
         )}
       </div>
 
@@ -89,65 +101,65 @@ function ApplicationsPage() {
       <div className="flex flex-col gap-3 rounded-card border border-line bg-white p-4 shadow-card sm:flex-row sm:flex-wrap">
         <input
           type="text"
-          aria-label="Search applications"
-          placeholder="Search by company or position..."
+          aria-label={t("applications.searchLabel")}
+          placeholder={t("applications.searchPlaceholder")}
           value={searchText}
           onChange={(e) => updateParam("search", e.target.value)}
           className={`${controlClasses} sm:min-w-60 sm:flex-1`}
         />
 
         <select
-          aria-label="Filter by status"
+          aria-label={t("applications.filterStatus")}
           value={statusFilter}
           onChange={(e) => updateParam("status", e.target.value)}
           className={controlClasses}
         >
-          <option value="">All Statuses</option>
-          <option value="applied">Applied</option>
-          <option value="screening">Screening</option>
-          <option value="interview">Interview</option>
-          <option value="offer">Offer</option>
-          <option value="rejected">Rejected</option>
-          <option value="withdrawn">Withdrawn</option>
+          <option value="">{t("applications.allStatuses")}</option>
+          {statusOptions.map((status) => (
+            <option key={status} value={status}>
+              {t(`status.${status}`)}
+            </option>
+          ))}
         </select>
 
         <select
-          aria-label="Filter by work mode"
+          aria-label={t("applications.filterWorkMode")}
           value={workModeFilter}
           onChange={(e) => updateParam("workMode", e.target.value)}
           className={controlClasses}
         >
-          <option value="">All Work Modes</option>
-          <option value="on-site">On-site</option>
-          <option value="hybrid">Hybrid</option>
-          <option value="remote">Remote</option>
+          <option value="">{t("applications.allWorkModes")}</option>
+          {workModeOptions.map((mode) => (
+            <option key={mode} value={mode}>
+              {t(`workMode.${mode}`)}
+            </option>
+          ))}
         </select>
 
         <select
-          aria-label="Sort applications"
+          aria-label={t("applications.sortLabel")}
           value={sortBy}
           onChange={(e) => updateParam("sortBy", e.target.value)}
           className={controlClasses}
         >
-          <option value="newest">Newest Applied</option>
-          <option value="oldest">Oldest Applied</option>
-          <option value="recentlyUpdated">Recently Updated</option>
-          <option value="companyAZ">Company A-Z</option>
+          {sortOptions.map((option) => (
+            <option key={option} value={option}>
+              {t(`sort.${option}`)}
+            </option>
+          ))}
         </select>
 
         {hasActiveFilters && (
           <Button variant="outline" onClick={clearFilters}>
-            Clear Filters
+            {t("applications.clearFilters")}
           </Button>
         )}
       </div>
 
       {applications.length === 0 ? (
-        <p className={emptyClasses}>No applications yet.</p>
+        <p className={emptyClasses}>{t("applications.empty")}</p>
       ) : sortedApplications.length === 0 ? (
-        <p className={emptyClasses}>
-          No applications match your search or filters.
-        </p>
+        <p className={emptyClasses}>{t("applications.noMatch")}</p>
       ) : (
         <div className="flex flex-col gap-3">
           {sortedApplications.map((application) => (

@@ -1,0 +1,153 @@
+{
+  "common": {
+    "show": "إظهار",
+    "hide": "إخفاء",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "edit": "تعديل",
+    "delete": "حذف"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "applications": "الطلبات"
+  },
+  "header": {
+    "welcomeBack": "مرحباً بعودتك",
+    "welcomeBackName": "مرحباً بعودتك، {{name}}"
+  },
+  "profileMenu": {
+    "open": "فتح قائمة الملف الشخصي",
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج"
+  },
+  "status": {
+    "applied": "تم التقديم",
+    "screening": "قيد الفرز",
+    "interview": "مقابلة",
+    "offer": "عرض",
+    "rejected": "مرفوض",
+    "withdrawn": "تم السحب"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "subtitle": "هنا تجد وضع بحثك عن عمل اليوم.",
+    "viewAllApplications": "عرض كل الطلبات",
+    "stats": {
+      "total": "إجمالي الطلبات",
+      "active": "الطلبات النشطة",
+      "interviews": "المقابلات",
+      "offers": "العروض",
+      "rejected": "المرفوضة"
+    },
+    "recent": {
+      "title": "أحدث الطلبات",
+      "viewAll": "عرض الكل",
+      "empty": "لا توجد طلبات بعد."
+    },
+    "upcoming": {
+      "title": "الإجراءات القادمة",
+      "empty": "لا شيء قادم حالياً.",
+      "overdue": "متأخر",
+      "followUp": "متابعة",
+      "interviewTitle": "{{company}} — مقابلة {{type}}",
+      "interviewTitleNoCompany": "مقابلة {{type}}"
+    }
+  },
+  "applications": {
+    "title": "الطلبات",
+    "count_zero": "لا توجد طلبات",
+    "count_one": "طلب واحد",
+    "count_two": "طلبان",
+    "count_few": "{{count}} طلبات",
+    "count_many": "{{count}} طلباً",
+    "count_other": "{{count}} طلب",
+    "add": "+ إضافة طلب",
+    "searchLabel": "البحث في الطلبات",
+    "searchPlaceholder": "ابحث باسم الشركة أو المسمى الوظيفي...",
+    "filterStatus": "تصفية حسب الحالة",
+    "allStatuses": "كل الحالات",
+    "filterWorkMode": "تصفية حسب نمط العمل",
+    "allWorkModes": "كل أنماط العمل",
+    "sortLabel": "ترتيب الطلبات",
+    "clearFilters": "مسح التصفية",
+    "empty": "لا توجد طلبات بعد.",
+    "noMatch": "لا توجد طلبات تطابق بحثك أو التصفية.",
+    "changeStatus": "تغيير حالة {{company}}",
+    "appliedOn": "تم التقديم بتاريخ {{date}}"
+  },
+  "workMode": {
+    "on-site": "في المقر",
+    "hybrid": "هجين",
+    "remote": "عن بُعد"
+  },
+  "sort": {
+    "newest": "الأحدث تقديماً",
+    "oldest": "الأقدم تقديماً",
+    "recentlyUpdated": "المحدّثة مؤخراً",
+    "companyAZ": "الشركة (أ-ي)"
+  },
+  "interviews": {
+    "types": {
+      "HR": "الموارد البشرية",
+      "Technical": "تقنية",
+      "Behavioral": "سلوكية",
+      "Final": "نهائية"
+    }
+  },
+  "auth": {
+    "fullName": "الاسم الكامل",
+    "fullNamePlaceholder": "اسمك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "you@example.com",
+    "targetRole": "الوظيفة المستهدفة (اختياري)",
+    "targetRolePlaceholder": "مثال: مطوّر واجهات أمامية",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "كلمة المرور الخاصة بك",
+    "newPasswordPlaceholder": "8 أحرف على الأقل",
+    "passwordHint": "استخدم 8 أحرف أو أكثر.",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPlaceholder": "أعد كتابة كلمة المرور",
+    "terms": "أوافق على الشروط وسياسة الخصوصية",
+    "remember": "تذكرني",
+    "forgot": "هل نسيت كلمة المرور؟",
+    "resetUnavailable": "إعادة تعيين كلمة المرور غير متاحة بعد.",
+    "login": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب",
+    "loginPage": {
+      "heroTitle": "تابع بحثك عن عمل من حيث توقفت",
+      "heroText": "طلباتك ومقابلاتك وتقدمك بانتظارك.",
+      "bannerTitle": "طلباتك بانتظارك",
+      "bannerText": "بياناتك تبقى على جهازك.",
+      "heading": "مرحباً بعودتك",
+      "subtitle": "سجّل الدخول لمشاهدة طلباتك ومقابلاتك القادمة.",
+      "newHere": "جديد على CareerFlow؟ <signup>إنشاء حساب</signup>"
+    },
+    "signupPage": {
+      "heading": "أنشئ حسابك",
+      "subtitle": "ابدأ بتتبع طلباتك في أقل من دقيقة",
+      "haveAccount": "لديك حساب بالفعل؟ <login>تسجيل الدخول</login>"
+    },
+    "panel": {
+      "interviewTitle": "مطوّر واجهات أمامية",
+      "interviewDetail": "Acme Studio · عن بُعد",
+      "interviewBadge": "مقابلة",
+      "offerTitle": "تم استلام عرض جديد",
+      "offerDetail": "Bluepeak · عن بُعد"
+    },
+    "layout": {
+      "title": "بحثك عن عمل كله في مكان واحد هادئ",
+      "description": "تتبّع طلباتك، وخطّط لمقابلاتك، وشاهد تقدّمك. مجاني، وبياناتك تبقى على جهازك.",
+      "bannerTitle": "مجاني وخاص بطبيعته",
+      "bannerText": "بياناتك تبقى على جهازك."
+    },
+    "errors": {
+      "emailInvalid": "أدخل بريداً إلكترونياً صحيحاً",
+      "passwordRequired": "أدخل كلمة المرور",
+      "nameRequired": "أدخل اسمك الكامل",
+      "passwordShort": "استخدم 8 أحرف أو أكثر",
+      "confirmRequired": "أكّد كلمة المرور",
+      "termsRequired": "يجب الموافقة للمتابعة",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين"
+    }
+  }
+}

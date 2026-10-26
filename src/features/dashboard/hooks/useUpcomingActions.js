@@ -15,8 +15,9 @@ export function useUpcomingActions() {
       id: `app-${app.id}`, //Prefixing keeps every item's id guaranteed unique.
       type: "application",
       applicationId: app.id,
-      title: `${app.company} — ${app.position}`, //Builds a readable label by combining two fields from the original application
-      description: app.nextActionDescription || "Follow up",
+      company: app.company,
+      position: app.position,
+      description: app.nextActionDescription || "",
       date: new Date(app.nextActionAt),
       isOverdue: new Date(app.nextActionAt) < now,
       //onverts the stored date (a plain string like "2026-09-28") into an actual JavaScript Date object — needed so it can later be compared (isOverdue)
@@ -41,9 +42,8 @@ export function useUpcomingActions() {
         id: `interview-${interview.id}`,
         type: "interview",
         applicationId: interview.applicationId,
-        title: application //to avoid crashing if application wasn't found.
-          ? `${application.company} — ${interview.type} Interview`
-          : `${interview.type} Interview`,
+        company: application ? application.company : "",
+        interviewType: interview.type,
         description: interview.interviewer || "",
         date: new Date(interview.scheduledAt),
         isOverdue: new Date(interview.scheduledAt) < now,

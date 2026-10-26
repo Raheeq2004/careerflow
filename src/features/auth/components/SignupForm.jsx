@@ -6,8 +6,11 @@ import PasswordField from "../../../components/UI/PasswordField";
 import LandingButton from "../../landing/components/LandingButton";
 import { signupSchema } from "../data/signupSchema";
 
+import { useTranslation } from "react-i18next";
+
 //Role: the form logic: values, validation, submit
 function SignupForm() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const {
@@ -39,42 +42,42 @@ function SignupForm() {
       className="flex flex-col gap-4"
     >
       <FormField
-        label="Full name"
+        label={t("auth.fullName")}
         id="signup-name"
-        placeholder="Your name"
+        placeholder={t("auth.fullNamePlaceholder")}
         autoComplete="name"
         error={errors.name?.message}
         {...register("name")}
       />
       <FormField
-        label="Email address"
+        label={t("auth.email")}
         id="signup-email"
         type="email"
-        placeholder="you@example.com"
+        placeholder={t("auth.emailPlaceholder")}
         autoComplete="email"
         error={errors.email?.message}
         {...register("email")}
       />
       <FormField
-        label="Target role (optional)"
+        label={t("auth.targetRole")}
         id="signup-role"
-        placeholder="e.g. Frontend Developer"
+        placeholder={t("auth.targetRolePlaceholder")}
         error={errors.targetRole?.message}
         {...register("targetRole")}
       />
       <PasswordField
-        label="Password"
+        label={t("auth.password")}
         id="signup-password"
-        placeholder="At least 8 characters"
+        placeholder={t("auth.newPasswordPlaceholder")}
         autoComplete="new-password"
-        hint="Use 8 or more characters."
+        hint={t("auth.passwordHint")}
         error={errors.password?.message}
         {...register("password")}
       />
       <PasswordField
-        label="Confirm password"
+        label={t("auth.confirmPassword")}
         id="signup-confirm"
-        placeholder="Repeat your password"
+        placeholder={t("auth.confirmPlaceholder")}
         autoComplete="new-password"
         error={errors.confirmPassword?.message}
         {...register("confirmPassword")}
@@ -88,15 +91,17 @@ function SignupForm() {
             className="mt-0.5 size-4 accent-brand"
             {...register("terms")}
           />
-          <span>I agree to the Terms and Privacy Policy</span>
+          <span>{t("auth.terms")}</span>
         </label>
         {errors.terms && (
-          <p className="mt-1.5 text-sm text-danger">{errors.terms.message}</p>
+          <p className="mt-1.5 text-sm text-danger">
+            {t(errors.terms.message)}
+          </p>
         )}
       </div>
 
       <LandingButton type="submit" className="w-full">
-        Create account
+        {t("auth.createAccount")}
       </LandingButton>
     </form>
   );

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { profileRepository } from "../features/profile/data/profileRepository";
 
-// The channel that carries the profile to any component inside the provider.
+// it holds the user’s profile (name and so on) and gives it to any component under it.
 const ProfileContext = createContext(null);
 
 export function ProfileProvider({ children }) {

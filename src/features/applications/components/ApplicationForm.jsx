@@ -158,7 +158,7 @@ function ApplicationForm({ initialData, onSubmit, onCancel }) {
         <button
           type="button"
           onClick={handleClearNextAction}
-          className="text-sm text-gray-500 hover:underline text-left"
+          className="text-sm text-gray-500 hover:underline text-start"
         >
           Clear next action
         </button>

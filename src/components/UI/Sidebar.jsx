@@ -1,9 +1,10 @@
 import { NavLink } from "react-router";
 import Logo from "./Logo";
+import { useTranslation } from "react-i18next";
 
 const navItems = [
-  { label: "Dashboard", to: "/app/dashboard" },
-  { label: "Applications", to: "/app/applications" },
+  { labelKey: "nav.dashboard", to: "/app/dashboard" },
+  { labelKey: "nav.applications", to: "/app/applications" },
 ];
 
 function linkClasses({ isActive }) {
@@ -15,8 +16,9 @@ function linkClasses({ isActive }) {
 }
 
 function Sidebar() {
+  const { t } = useTranslation();
   return (
-    <aside className="w-full border-b border-line bg-white p-4 md:w-[220px] md:border-b-0 md:border-r">
+    <aside className="w-full border-b border-line bg-white p-4 md:w-[220px] md:border-b-0 md:border-e">
       <div className="mb-6">
         <Logo to="/app/dashboard" />
       </div>
@@ -24,7 +26,7 @@ function Sidebar() {
       <nav className="flex flex-col gap-1">
         {navItems.map((item) => (
           <NavLink key={item.to} to={item.to} className={linkClasses}>
-            {item.label}
+            {t(item.labelKey)}
           </NavLink>
         ))}
       </nav>

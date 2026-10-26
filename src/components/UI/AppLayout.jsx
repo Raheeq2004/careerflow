@@ -29,3 +29,5 @@ function AppLayout() {
 }
 
 export default AppLayout;
+//outlet :the hole where the current page appears. The router puts Dashboard, Applications or Profile here.
+//suspense : the Profile page loads lazily. While it loads, the user sees “Loading...”.

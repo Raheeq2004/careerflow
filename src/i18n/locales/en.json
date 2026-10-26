@@ -1,0 +1,149 @@
+{
+  "common": {
+    "show": "Show",
+    "hide": "Hide",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "applications": "Applications"
+  },
+  "header": {
+    "welcomeBack": "Welcome back",
+    "welcomeBackName": "Welcome back, {{name}}"
+  },
+  "profileMenu": {
+    "open": "Open profile menu",
+    "profile": "Profile",
+    "logout": "Log out"
+  },
+  "status": {
+    "applied": "Applied",
+    "screening": "Screening",
+    "interview": "Interview",
+    "offer": "Offer",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Here is where your job search stands today.",
+    "viewAllApplications": "View all applications",
+    "stats": {
+      "total": "Total Applications",
+      "active": "Active Applications",
+      "interviews": "Interviews",
+      "offers": "Offers",
+      "rejected": "Rejected"
+    },
+    "recent": {
+      "title": "Recent Applications",
+      "viewAll": "View all",
+      "empty": "No applications yet."
+    },
+    "upcoming": {
+      "title": "Upcoming Actions",
+      "empty": "Nothing upcoming right now.",
+      "overdue": "Overdue",
+      "followUp": "Follow up",
+      "interviewTitle": "{{company}} — {{type}} Interview",
+      "interviewTitleNoCompany": "{{type}} Interview"
+    }
+  },
+  "applications": {
+    "title": "Applications",
+    "count_one": "{{count}} application",
+    "count_other": "{{count}} applications",
+    "add": "+ Add Application",
+    "searchLabel": "Search applications",
+    "searchPlaceholder": "Search by company or position...",
+    "filterStatus": "Filter by status",
+    "allStatuses": "All Statuses",
+    "filterWorkMode": "Filter by work mode",
+    "allWorkModes": "All Work Modes",
+    "sortLabel": "Sort applications",
+    "clearFilters": "Clear Filters",
+    "empty": "No applications yet.",
+    "noMatch": "No applications match your search or filters.",
+    "changeStatus": "Change status for {{company}}",
+    "appliedOn": "Applied on {{date}}"
+  },
+  "workMode": {
+    "on-site": "On-site",
+    "hybrid": "Hybrid",
+    "remote": "Remote"
+  },
+  "sort": {
+    "newest": "Newest Applied",
+    "oldest": "Oldest Applied",
+    "recentlyUpdated": "Recently Updated",
+    "companyAZ": "Company A-Z"
+  },
+  "interviews": {
+    "types": {
+      "HR": "HR",
+      "Technical": "Technical",
+      "Behavioral": "Behavioral",
+      "Final": "Final"
+    }
+  },
+  "auth": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "targetRole": "Target role (optional)",
+    "targetRolePlaceholder": "e.g. Frontend Developer",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "newPasswordPlaceholder": "At least 8 characters",
+    "passwordHint": "Use 8 or more characters.",
+    "confirmPassword": "Confirm password",
+    "confirmPlaceholder": "Repeat your password",
+    "terms": "I agree to the Terms and Privacy Policy",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "resetUnavailable": "Password reset is not available yet.",
+    "login": "Log in",
+    "createAccount": "Create account",
+    "loginPage": {
+      "heroTitle": "Pick up your job search where you left off",
+      "heroText": "Your applications, interviews and progress are waiting for you.",
+      "bannerTitle": "Your applications are waiting",
+      "bannerText": "Your data stays on your device.",
+      "heading": "Welcome back",
+      "subtitle": "Log in to see your applications and upcoming interviews.",
+      "newHere": "New to CareerFlow? <signup>Sign Up</signup>"
+    },
+    "signupPage": {
+      "heading": "Create your account",
+      "subtitle": "Start tracking your applications in under a minute",
+      "haveAccount": "Already have an account? <login>Log in</login>"
+    },
+    "panel": {
+      "interviewTitle": "Frontend Developer",
+      "interviewDetail": "Acme Studio · Remote",
+      "interviewBadge": "Interview",
+      "offerTitle": "New offer received",
+      "offerDetail": "Bluepeak · Remote"
+    },
+    "layout": {
+      "title": "Your whole job search, in one calm place",
+      "description": "Track applications, plan interviews and see your progress. Free, and your data stays on your device.",
+      "bannerTitle": "Free, and private by design",
+      "bannerText": "Your data stays on your device."
+    },
+    "errors": {
+      "emailInvalid": "Enter a valid email address",
+      "passwordRequired": "Enter your password",
+      "nameRequired": "Enter your full name",
+      "passwordShort": "Use 8 or more characters",
+      "confirmRequired": "Confirm your password",
+      "termsRequired": "You must agree to continue",
+      "passwordMismatch": "Passwords do not match"
+    }
+  }
+}

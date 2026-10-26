@@ -5,6 +5,8 @@ import Logo from "../../../components/UI/Logo";
 
 import { Link } from "react-router";
 
+import LanguageSwitcher from "../../../components/UI/LanguageSwitcher";
+
 const linkClasses = "rounded-control px-3 py-2 text-[15px] font-medium text-muted transition-colors hover:bg-brand-soft hover:text-brand";
 
   function Navbar() {
@@ -29,7 +31,9 @@ const linkClasses = "rounded-control px-3 py-2 text-[15px] font-medium text-mute
           ))}
         </ul>
 
+      
         <div className="flex items-center gap-3">
+          <LanguageSwitcher className="hidden sm:inline-block" />
           <LandingButton to="/login" variant="outline">
             Login
           </LandingButton>
@@ -52,3 +56,6 @@ so href={link.href} becomes href="#home",
 and {link.label} becomes the text Home.*/
 
 //The 3 children of <nav>: logo , list , buttons
+
+//key={link.label}: React needs a key in every .map.
+//I added a to field in the nav data, and the Navbar picks Link or <a> from it, so page links use the router and section links scroll.
