@@ -1,33 +1,42 @@
 import { Link } from "react-router";
+import { useTranslation, Trans } from "react-i18next";
 import AuthLayout from "./components/AuthLayout";
 import LoginForm from "./components/LoginForm";
 
 function LoginPage() {
+  const { t } = useTranslation();
+
   return (
-    <AuthLayout //desktop only
-      title="Pick up your job search where you left off"
-      description="Your applications, interviews and progress are waiting for you."
-      bannerTitle="Your applications are waiting"
-      bannerText="Your data stays on your device."
+    <AuthLayout
+      title={t("auth.loginPage.heroTitle")}
+      description={t("auth.loginPage.heroText")}
+      bannerTitle={t("auth.loginPage.bannerTitle")}
+      bannerText={t("auth.loginPage.bannerText")}
     >
-      <h1 className="font-heading text-h3 font-bold text-navy">Welcome back</h1>
-      <p className="mt-2 text-sm text-muted">
-        Log in to see your applications and upcoming interviews.
-      </p>
+      <h1 className="font-heading text-h3 font-bold text-navy">
+        {t("auth.loginPage.heading")}
+      </h1>
+      <p className="mt-2 text-sm text-muted">{t("auth.loginPage.subtitle")}</p>
 
       <div className="mt-8">
-        <LoginForm /> 
+        <LoginForm />
       </div>
 
       <p className="mt-6 text-center text-sm text-muted">
-        New to CareerFlow?{" "}
-        <Link to="/signup" className="font-semibold text-brand hover:underline">
-          Sign Up
-        </Link>
+        <Trans
+          i18nKey="auth.loginPage.newHere"
+          components={{
+            signup: (
+              <Link
+                to="/signup"
+                className="font-semibold text-brand hover:underline"
+              />
+            ),
+          }}
+        />
       </p>
-    </AuthLayout>// while in the loogin page we send data , to change the defualt
+    </AuthLayout>
   );
 }
 
 export default LoginPage;
-// LoginForm  (children)

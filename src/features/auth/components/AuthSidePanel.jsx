@@ -1,26 +1,31 @@
 import Logo from "../../../components/UI/Logo";
+import { useTranslation } from "react-i18next";
 //Role: the left gradient panel on desktop.
+
+
+
 
 const panelCards = [
   {
     id: "interview",
-    title: "Frontend Developer",
-    detail: "Acme Studio · Remote",
-    badge: "Interview",
+    titleKey: "auth.panel.interviewTitle",
+    detailKey: "auth.panel.interviewDetail",
+    badgeKey: "auth.panel.interviewBadge",
   },
   {
     id: "offer",
-    title: "New offer received",
-    detail: "Bluepeak · Remote",
+    titleKey: "auth.panel.offerTitle",
+    detailKey: "auth.panel.offerDetail",
     dotClass: "bg-warn",
     className: "ms-16",
   },
 ];
 
 function AuthSidePanel({ title, description }) {
+  const { t } = useTranslation();
   return (
     <aside className="hidden bg-brand-gradient p-12 text-white lg:flex lg:flex-col">
-      <Logo tone="light"  to="/" />
+      <Logo tone="light" to="/" />
 
       <div className="my-auto max-w-md">
         <h2 className="font-heading text-h2 font-bold">{title}</h2>
@@ -39,12 +44,12 @@ function AuthSidePanel({ title, description }) {
                 />
               )}
               <div>
-                <p className="text-sm font-semibold">{card.title}</p>
-                <p className="text-xs text-muted">{card.detail}</p>
+                <p className="text-sm font-semibold">{t(card.titleKey)}</p>
+                <p className="text-xs text-muted">{t(card.detailKey)}</p>
               </div>
               {card.badge && (
                 <span className="ms-4 rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">
-                  {card.badge}
+                  {card.badgeKey && t(card.badgeKey)}
                 </span>
               )}
             </li>

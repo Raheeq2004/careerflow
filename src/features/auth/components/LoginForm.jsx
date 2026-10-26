@@ -7,9 +7,13 @@ import PasswordField from "../../../components/UI/PasswordField";
 import LandingButton from "../../landing/components/LandingButton";
 import { loginSchema } from "../data/loginSchema";
 
+import { useTranslation } from "react-i18next";
+
 function LoginForm() {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
-  const [notice, setNotice] = useState("");
+const [showNotice, setShowNotice] = useState(false);
 
   const {
     register,
@@ -32,18 +36,18 @@ function LoginForm() {
       className="flex flex-col gap-4"
     >
       <FormField
-        label="Email address"
+        label={t("auth.email")}
         id="login-email"
         type="email"
-        placeholder="you@example.com"
+        placeholder={t("auth.emailPlaceholder")}
         autoComplete="email"
         error={errors.email?.message}
         {...register("email")}
       />
       <PasswordField
-        label="Password"
+        label={t("auth.password")}
         id="login-password"
-        placeholder="Your password"
+        placeholder={t("auth.passwordPlaceholder")}
         autoComplete="current-password"
         error={errors.password?.message}
         {...register("password")}
@@ -56,28 +60,28 @@ function LoginForm() {
             className="size-4 accent-brand"
             {...register("remember")}
           />
-          Remember me
+          {t("auth.remember")}
         </label>
         <button
           type="button"
-          onClick={() => setNotice("Password reset is not available yet.")}
+          onClick={() => setShowNotice(true)}
           className="text-sm font-semibold text-brand hover:underline"
         >
-          Forgot password?
+          {t("auth.forgot")}
         </button>
       </div>
 
-      {notice && (
+      {showNotice && (
         <p
           role="status"
           className="rounded-control bg-brand-soft px-4 py-3 text-sm text-ink"
         >
-          {notice}
+          {t("auth.resetUnavailable")}
         </p>
       )}
 
       <LandingButton type="submit" className="w-full">
-        Log in
+        {t("auth.login")}
       </LandingButton>
     </form>
   );

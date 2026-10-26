@@ -33,5 +33,61 @@
     "hide": "إخفاء",
     "showPassword": "إظهار كلمة المرور",
     "hidePassword": "إخفاء كلمة المرور"
+  },
+  "auth": {
+    "fullName": "الاسم الكامل",
+     "layout": {
+    "title": "بحثك عن عمل كله في مكان واحد هادئ",
+    "description": "تتبّع طلباتك، وخطّط لمقابلاتك، وشاهد تقدّمك. مجاني، وبياناتك تبقى على جهازك.",
+    "bannerTitle": "مجاني وخاص بطبيعته",
+    "bannerText": "بياناتك تبقى على جهازك."
+  },
+    "fullNamePlaceholder": "اسمك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "you@example.com",
+    "targetRole": "الوظيفة المستهدفة (اختياري)",
+    "targetRolePlaceholder": "مثال: مطوّر واجهات أمامية",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "كلمة المرور الخاصة بك",
+    "newPasswordPlaceholder": "8 أحرف على الأقل",
+    "passwordHint": "استخدم 8 أحرف أو أكثر.",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPlaceholder": "أعد كتابة كلمة المرور",
+    "terms": "أوافق على الشروط وسياسة الخصوصية",
+    "remember": "تذكرني",
+    "forgot": "هل نسيت كلمة المرور؟",
+    "resetUnavailable": "إعادة تعيين كلمة المرور غير متاحة بعد.",
+    "login": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب",
+    "loginPage": {
+      "heroTitle": "تابع بحثك عن عمل من حيث توقفت",
+      "heroText": "طلباتك ومقابلاتك وتقدمك بانتظارك.",
+      "bannerTitle": "طلباتك بانتظارك",
+      "bannerText": "بياناتك تبقى على جهازك.",
+      "heading": "مرحباً بعودتك",
+      "subtitle": "سجّل الدخول لمشاهدة طلباتك ومقابلاتك القادمة.",
+      "newHere": "جديد على CareerFlow؟ <signup>إنشاء حساب</signup>"
+    },
+    "signupPage": {
+      "heading": "أنشئ حسابك",
+      "subtitle": "ابدأ بتتبع طلباتك في أقل من دقيقة",
+      "haveAccount": "لديك حساب بالفعل؟ <login>تسجيل الدخول</login>"
+    },
+    "panel": {
+      "interviewTitle": "مطوّر واجهات أمامية",
+      "interviewDetail": "Acme Studio · عن بُعد",
+      "interviewBadge": "مقابلة",
+      "offerTitle": "تم استلام عرض جديد",
+      "offerDetail": "Bluepeak · عن بُعد"
+    },
+    "errors": {
+      "emailInvalid": "أدخل بريداً إلكترونياً صحيحاً",
+      "passwordRequired": "أدخل كلمة المرور",
+      "nameRequired": "أدخل اسمك الكامل",
+      "passwordShort": "استخدم 8 أحرف أو أكثر",
+      "confirmRequired": "أكّد كلمة المرور",
+      "termsRequired": "يجب الموافقة للمتابعة",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين"
+    }
   }
 }

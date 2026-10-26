@@ -32,9 +32,65 @@
   },
 
   "common": {
-  "show": "Show",
-  "hide": "Hide",
-  "showPassword": "Show password",
-  "hidePassword": "Hide password"
-}
+    "show": "Show",
+    "hide": "Hide",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "auth": {
+    "fullName": "Full name",
+     "layout": {
+    "title": "Your whole job search, in one calm place",
+    "description": "Track applications, plan interviews and see your progress. Free, and your data stays on your device.",
+    "bannerTitle": "Free, and private by design",
+    "bannerText": "Your data stays on your device."
+  },
+    "fullNamePlaceholder": "Your name",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "targetRole": "Target role (optional)",
+    "targetRolePlaceholder": "e.g. Frontend Developer",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "newPasswordPlaceholder": "At least 8 characters",
+    "passwordHint": "Use 8 or more characters.",
+    "confirmPassword": "Confirm password",
+    "confirmPlaceholder": "Repeat your password",
+    "terms": "I agree to the Terms and Privacy Policy",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "resetUnavailable": "Password reset is not available yet.",
+    "login": "Log in",
+    "createAccount": "Create account",
+    "loginPage": {
+      "heroTitle": "Pick up your job search where you left off",
+      "heroText": "Your applications, interviews and progress are waiting for you.",
+      "bannerTitle": "Your applications are waiting",
+      "bannerText": "Your data stays on your device.",
+      "heading": "Welcome back",
+      "subtitle": "Log in to see your applications and upcoming interviews.",
+      "newHere": "New to CareerFlow? <signup>Sign Up</signup>"
+    },
+    "signupPage": {
+      "heading": "Create your account",
+      "subtitle": "Start tracking your applications in under a minute",
+      "haveAccount": "Already have an account? <login>Log in</login>"
+    },
+    "panel": {
+      "interviewTitle": "Frontend Developer",
+      "interviewDetail": "Acme Studio · Remote",
+      "interviewBadge": "Interview",
+      "offerTitle": "New offer received",
+      "offerDetail": "Bluepeak · Remote"
+    },
+    "errors": {
+      "emailInvalid": "Enter a valid email address",
+      "passwordRequired": "Enter your password",
+      "nameRequired": "Enter your full name",
+      "passwordShort": "Use 8 or more characters",
+      "confirmRequired": "Confirm your password",
+      "termsRequired": "You must agree to continue",
+      "passwordMismatch": "Passwords do not match"
+    }
+  }
 }

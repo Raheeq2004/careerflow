@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 //Role: one field: label, input
 function FormField({
   label, // the label text
@@ -9,6 +10,7 @@ function FormField({
   ref,
   ...rest
 }) {
+  const { t } = useTranslation();
   const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined;
   //tells screen readers which text
   return (
@@ -39,7 +41,7 @@ function FormField({
 
       {error && (
         <p id={`${id}-error`} className="text-sm text-danger">
-          {error}
+          {t(error, { defaultValue: error })}
         </p>
       )}
     </div>
@@ -47,15 +49,3 @@ function FormField({
 }
 
 export default FormField;
-//one form field: label + input (or textarea) + error message. Reusable
-//label, id, error, as, ref, and everything else collected in ...rest (placeholder, type, rows, name, onChange, onBlur...)
-
-//┌───────────────────────────────────┐
-//│ Email address            ← label  │
-//│ ┌───────────────────────────────┐ │
-//│ │ you@example.com   ← input     │ │
-//│ └───────────────────────────────┘ │
-//│ Enter a valid email address       │  ← error (red, only if wrong)
-//└───────────────────────────────────┘
-
-//Show the hint only when there’s no error.
