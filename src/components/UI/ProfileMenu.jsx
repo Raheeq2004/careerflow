@@ -1,41 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
-
+//useRef + useEffect: outside click and Escape work only while the menu is open,
 const itemClasses =
   "flex min-h-11 w-full items-center gap-2.5 rounded-control px-3 text-left text-sm font-medium hover:bg-page focus-visible:outline-2 focus-visible:outline-brand";
+//Profile and Log out. Both need the same look
 
 function Icon({ children, className = "" }) {
   return (
     <svg
-      width="18"
+      width="18" //18 × 18 pixels.
       height="18"
-      viewBox="0 0 24 24"
-      fill="none"
+      viewBox="0 0 24 24" //inside grid: 24 × 24
+      fill="none" //no color inside
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2" //line is 2 units thick
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      className={className}
+      className={className} //the outside add classes (a size or a color)
     >
       {children}
+      
     </svg>
   );
-}
+}     //drawing come in the children ,path id : is a list of pen moves
 
 function ProfileMenu({ name }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); //is the menu visible? It starts closed
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
   const initial = name ? name.charAt(0).toUpperCase() : "U";
+  //the first letter of the name
 
   useEffect(() => {
     if (!open) return;
 
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setOpen(false);
+        setOpen(false); //click outside the menu:close
       }
     }
 
@@ -49,11 +52,10 @@ function ProfileMenu({ name }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
-    };
+    }; //don’t leave extra listeners running, when closed
   }, [open]);
 
   function handleLogout() {
-    // Demo only: there is no real session yet, so we just go to the login page.
     setOpen(false);
     navigate("/login");
   }
@@ -75,7 +77,7 @@ function ProfileMenu({ name }) {
           <path d="M6 9l6 6 6-6" />
         </Icon>
       </button>
-
+        
       {open && (
         <div
           role="menu"
@@ -85,7 +87,7 @@ function ProfileMenu({ name }) {
             to="/app/profile"
             role="menuitem"
             onClick={() => setOpen(false)}
-            className={`${itemClasses} text-ink`}
+            className={`${itemClasses} text-ink`}//page
           >
             <Icon className="text-muted">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -100,7 +102,7 @@ function ProfileMenu({ name }) {
             type="button"
             role="menuitem"
             onClick={handleLogout}
-            className={`${itemClasses} text-danger`}
+            className={`${itemClasses} text-danger`}//logout
           >
             <Icon>
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />

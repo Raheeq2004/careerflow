@@ -9,9 +9,9 @@ function SignupPage() {
         Create your account
       </h1>
       <p className="mt-2 text-sm text-muted">
-        Start tracking your applications in under a minute.
+        Start tracking your applications in under a minute
       </p>
-
+        
       <div className="mt-8">
         <SignupForm />
       </div>
@@ -27,3 +27,4 @@ function SignupPage() {
 }
 
 export default SignupPage;
+//h1 , p1 : props from  signup login to layout

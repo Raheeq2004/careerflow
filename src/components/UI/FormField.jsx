@@ -1,8 +1,8 @@
 //Role: one field: label, input
 function FormField({
-  label,
-  id,
-  error,
+  label, // the label text
+  id, //  links label to input
+  error, //the red text
   hint,
   action,
   as: Control = "input",
@@ -49,3 +49,13 @@ function FormField({
 export default FormField;
 //one form field: label + input (or textarea) + error message. Reusable
 //label, id, error, as, ref, and everything else collected in ...rest (placeholder, type, rows, name, onChange, onBlur...)
+
+//┌───────────────────────────────────┐
+//│ Email address            ← label  │
+//│ ┌───────────────────────────────┐ │
+//│ │ you@example.com   ← input     │ │
+//│ └───────────────────────────────┘ │
+//│ Enter a valid email address       │  ← error (red, only if wrong)
+//└───────────────────────────────────┘
+
+//Show the hint only when there’s no error.

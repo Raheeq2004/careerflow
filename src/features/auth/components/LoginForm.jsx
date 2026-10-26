@@ -13,7 +13,7 @@ function LoginForm() {
 
   const {
     register,
-    handleSubmit,
+    handleSubmit, //runs the Zod rules.
     formState: { errors },
   } = useForm({
     resolver: zodResolver(loginSchema),

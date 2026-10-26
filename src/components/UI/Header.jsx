@@ -1,11 +1,10 @@
-import { useProfile } from "../../context/ProfileContext";
+import { useProfile } from "../../context/ProfileContext";//for the data from the provider
 import ProfileMenu from "./ProfileMenu";
 
 function Header() {
   const { profile } = useProfile();
 
-  // ASSUMPTION: the profile's name field is called "fullName".
-  // If yours has another name (for example "name"), change it on this line only.
+  
   const name = profile?.fullName?.trim() ?? "";
   const firstName = name.split(" ")[0];
 

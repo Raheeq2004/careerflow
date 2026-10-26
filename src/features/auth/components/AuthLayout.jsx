@@ -31,3 +31,4 @@ function AuthLayout({
 
 export default AuthLayout;
 //The = "..." part means “if nobody sends me a title, use this one”.
+    //form goes inside the children

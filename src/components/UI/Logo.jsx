@@ -5,7 +5,7 @@ const sizes = {
   sm: { mark: "size-6", text: "text-base" },
   md: { mark: "size-8", text: "text-xl" },
   lg: { mark: "size-12", text: "text-3xl" },
-};
+};//Picture and text grow together
 
 function Logo({ tone = "dark", href = "#home", to, size = "md" }) {
   const textColor = tone === "light" ? "text-white" : "text-navy";
@@ -35,3 +35,4 @@ function Logo({ tone = "dark", href = "#home", to, size = "md" }) {
 }
 
 export default Logo;
+//tone	"light" = white text (for dark backgrounds). "dark" = navy text , defult

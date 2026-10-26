@@ -4,7 +4,7 @@ import LoginForm from "./components/LoginForm";
 
 function LoginPage() {
   return (
-    <AuthLayout
+    <AuthLayout //desktop only
       title="Pick up your job search where you left off"
       description="Your applications, interviews and progress are waiting for you."
       bannerTitle="Your applications are waiting"
@@ -16,7 +16,7 @@ function LoginPage() {
       </p>
 
       <div className="mt-8">
-        <LoginForm />
+        <LoginForm /> 
       </div>
 
       <p className="mt-6 text-center text-sm text-muted">
@@ -30,3 +30,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
+// LoginForm  (children)

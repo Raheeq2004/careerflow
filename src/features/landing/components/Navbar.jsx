@@ -52,3 +52,6 @@ so href={link.href} becomes href="#home",
 and {link.label} becomes the text Home.*/
 
 //The 3 children of <nav>: logo , list , buttons
+
+//key={link.label}: React needs a key in every .map.
+//I added a to field in the nav data, and the Navbar picks Link or <a> from it, so page links use the router and section links scroll.
