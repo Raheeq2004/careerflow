@@ -4,6 +4,13 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./locales/en.json";
 import ar from "./locales/ar.json";
 
+function applyDirection(lng) {
+  document.documentElement.lang = lng;
+  document.documentElement.dir = i18n.dir(lng);
+}
+
+i18n.on("languageChanged", applyDirection);   
+
 i18n
   .use(LanguageDetector) //Adds the memory plugin
   .use(initReactI18next) //Connects i18next to React
@@ -21,6 +28,11 @@ i18n
       caches: ["localStorage"],
     }, //Save the choice in the chaches
     interpolation: { escapeValue: false },
+
+
+
   });
+
+  
 
 export default i18n;
