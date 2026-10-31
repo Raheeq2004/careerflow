@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Button from "../../../components/UI/Button";
 
+// The stored values. The shown text comes from the dictionary.
 const INTERVIEW_TYPES = [
   "HR",
   "Technical",
@@ -10,11 +12,10 @@ const INTERVIEW_TYPES = [
   "Other",
 ];
 const STATUS_OPTIONS = ["Scheduled", "Completed", "Cancelled"];
-//plain arrays of strings defined outside the component so they don't get recreated every render, Used to build the <select> dropdown options.
 
 function InterviewForm({ initialData, onSubmit, onCancel }) {
+  const { t } = useTranslation();
   const [type, setType] = useState(initialData?.type || "HR");
-  //usestate creates one piece of state and gives back two things in an array
   const [scheduledAt, setScheduledAt] = useState(
     initialData?.scheduledAt || "",
   );
@@ -29,7 +30,7 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
     if (!scheduledAt) return;
     //don't submit if no date was picked.
     onSubmit({ type, scheduledAt, status, interviewer, notes });
-  } //packages 5 field values into one object and hands it to whoever gave the onSubmit prop
+  }
 
   return (
     <form
@@ -38,28 +39,25 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
     >
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Type
+          {t("interviews.form.type")}
         </label>
         <select
-          value={type} //choosen option
-          onChange={(e) => setType(e.target.value)} //setType(...) updates the state to match.
+          value={type}
+          onChange={(e) => setType(e.target.value)}
           className="w-full border border-gray-300 rounded-md p-2"
         >
-          {INTERVIEW_TYPES.map(
-            (
-              t, //t is the option for the user
-            ) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ),
-          )}
+          {/* the map variable is called "option", NOT "t": it would hide our t() function */}
+          {INTERVIEW_TYPES.map((option) => (
+            <option key={option} value={option}>
+              {t(`interviews.types.${option}`)}
+            </option>
+          ))}
         </select>
       </div>
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Scheduled Date/Time
+          {t("interviews.form.scheduledAt")}
         </label>
         <input
           type="datetime-local"
@@ -72,16 +70,16 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Status
+          {t("interviews.form.status")}
         </label>
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
           className="w-full border border-gray-300 rounded-md p-2"
         >
-          {STATUS_OPTIONS.map((s) => (
-            <option key={s} value={s}>
-              {s}
+          {STATUS_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {t(`interviews.statuses.${option}`)}
             </option>
           ))}
         </select>
@@ -89,7 +87,7 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Interviewer / Team
+          {t("interviews.form.interviewer")}
         </label>
         <input
           type="text"
@@ -101,7 +99,7 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Notes
+          {t("interviews.form.notes")}
         </label>
         <textarea
           value={notes}
@@ -112,13 +110,13 @@ function InterviewForm({ initialData, onSubmit, onCancel }) {
       </div>
 
       <div className="flex gap-3">
-        <Button type="submit">Save</Button>
+        <Button type="submit">{t("interviews.form.save")}</Button>
         <button
           type="button"
           onClick={onCancel}
           className="px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50"
         >
-          Cancel
+          {t("interviews.form.cancel")}
         </button>
       </div>
     </form>

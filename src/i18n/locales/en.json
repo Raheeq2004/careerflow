@@ -262,12 +262,69 @@
     }
   },
   "interviews": {
+    "title": "Interviews",
+    "add": "+ Add Interview",
+    "empty": "No interviews added yet.",
+    "noDate": "No date set",
+    "interviewer": "Interviewer: {{name}}",
+    "questionCount_one": "{{count}} question",
+    "questionCount_other": "{{count}} questions",
     "types": {
       "HR": "HR",
       "Technical": "Technical",
-      "Behavioral": "Behavioral",
-      "Final": "Final"
+      "Take-home Task": "Take-home Task",
+      "Manager": "Manager",
+      "Final": "Final",
+      "Other": "Other"
+    },
+    "statuses": {
+      "Scheduled": "Scheduled",
+      "Completed": "Completed",
+      "Cancelled": "Cancelled"
+    },
+    "form": {
+      "type": "Type",
+      "scheduledAt": "Scheduled Date/Time",
+      "status": "Status",
+      "interviewer": "Interviewer / Team",
+      "notes": "Notes",
+      "save": "Save",
+      "cancel": "Cancel"
     }
+  },
+  "questions": {
+    "title": "Questions",
+    "empty": "No questions added yet.",
+    "add": "+ Add question",
+    "q": "Q: {{text}}",
+    "myAnswer": "My answer: {{text}}",
+    "answeredWell": "Answered well",
+    "needsReview": "Needs review",
+    "reviewNotes": "Review notes: {{text}}",
+    "form": {
+      "question": "Question",
+      "myAnswer": "My Answer",
+      "answeredWellCheck": "Did I answer it well?",
+      "reviewNotes": "Review Notes",
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "details": {
+    "notFound": "Application not found.",
+    "back": "Back to Applications",
+    "location": "Location",
+    "workMode": "Work Mode",
+    "source": "Source",
+    "jobUrl": "Job URL",
+    "appliedDate": "Applied Date",
+    "nextActionDate": "Next Action Date",
+    "noNextAction": "No next action scheduled",
+    "nextAction": "Next Action",
+    "notes": "Notes",
+    "noNotes": "No notes yet.",
+    "created": "Created: {{date}}",
+    "updated": "Last Updated: {{date}}"
   },
   "auth": {
     "fullName": "Full name",

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function QuestionForm({ initialData, onSubmit, onCancel }) {
+  const { t } = useTranslation();
   const [question, setQuestion] = useState(initialData?.question || "");
   const [myAnswer, setMyAnswer] = useState(initialData?.myAnswer || "");
   const [answeredWell, setAnsweredWell] = useState(
@@ -23,7 +25,7 @@ function QuestionForm({ initialData, onSubmit, onCancel }) {
     >
       <div>
         <label className="block text-xs font-medium text-gray-700 mb-1">
-          Question
+          {t("questions.form.question")}
         </label>
         <input
           type="text"
@@ -36,7 +38,7 @@ function QuestionForm({ initialData, onSubmit, onCancel }) {
 
       <div>
         <label className="block text-xs font-medium text-gray-700 mb-1">
-          My Answer
+          {t("questions.form.myAnswer")}
         </label>
         <textarea
           value={myAnswer}
@@ -54,13 +56,13 @@ function QuestionForm({ initialData, onSubmit, onCancel }) {
           onChange={(e) => setAnsweredWell(e.target.checked)}
         />
         <label htmlFor="answeredWell" className="text-xs text-gray-700">
-          Did I answer it well?
+          {t("questions.form.answeredWellCheck")}
         </label>
       </div>
 
       <div>
         <label className="block text-xs font-medium text-gray-700 mb-1">
-          Review Notes
+          {t("questions.form.reviewNotes")}
         </label>
         <textarea
           value={reviewNotes}
@@ -75,14 +77,14 @@ function QuestionForm({ initialData, onSubmit, onCancel }) {
           type="submit"
           className="px-3 py-1.5 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700"
         >
-          Save
+          {t("questions.form.save")}
         </button>
         <button
           type="button"
           onClick={onCancel}
           className="px-3 py-1.5 text-sm rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50"
         >
-          Cancel
+          {t("questions.form.cancel")}
         </button>
       </div>
     </form>

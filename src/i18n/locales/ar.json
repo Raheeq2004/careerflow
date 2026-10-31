@@ -266,12 +266,73 @@
     }
   },
   "interviews": {
+    "title": "المقابلات",
+    "add": "+ إضافة مقابلة",
+    "empty": "لا توجد مقابلات بعد.",
+    "noDate": "لم يُحدَّد موعد",
+    "interviewer": "القائم بالمقابلة: {{name}}",
+    "questionCount_zero": "لا أسئلة",
+    "questionCount_one": "سؤال واحد",
+    "questionCount_two": "سؤالان",
+    "questionCount_few": "{{count}} أسئلة",
+    "questionCount_many": "{{count}} سؤالاً",
+    "questionCount_other": "{{count}} سؤال",
     "types": {
       "HR": "الموارد البشرية",
       "Technical": "تقنية",
-      "Behavioral": "سلوكية",
-      "Final": "نهائية"
+      "Take-home Task": "مهمة منزلية",
+      "Manager": "المدير",
+      "Final": "نهائية",
+      "Other": "أخرى"
+    },
+    "statuses": {
+      "Scheduled": "مجدولة",
+      "Completed": "مكتملة",
+      "Cancelled": "ملغاة"
+    },
+    "form": {
+      "type": "النوع",
+      "scheduledAt": "موعد المقابلة (التاريخ والوقت)",
+      "status": "الحالة",
+      "interviewer": "القائم بالمقابلة / الفريق",
+      "notes": "ملاحظات",
+      "save": "حفظ",
+      "cancel": "إلغاء"
     }
+  },
+  "questions": {
+    "title": "الأسئلة",
+    "empty": "لا توجد أسئلة بعد.",
+    "add": "+ إضافة سؤال",
+    "q": "س: {{text}}",
+    "myAnswer": "إجابتي: {{text}}",
+    "answeredWell": "أجبت جيداً",
+    "needsReview": "تحتاج مراجعة",
+    "reviewNotes": "ملاحظات المراجعة: {{text}}",
+    "form": {
+      "question": "السؤال",
+      "myAnswer": "إجابتي",
+      "answeredWellCheck": "هل أجبت عنه جيداً؟",
+      "reviewNotes": "ملاحظات المراجعة",
+      "save": "حفظ",
+      "cancel": "إلغاء"
+    }
+  },
+  "details": {
+    "notFound": "لم يتم العثور على الطلب.",
+    "back": "العودة إلى الطلبات",
+    "location": "الموقع",
+    "workMode": "نمط العمل",
+    "source": "المصدر",
+    "jobUrl": "رابط الوظيفة",
+    "appliedDate": "تاريخ التقديم",
+    "nextActionDate": "تاريخ الإجراء التالي",
+    "noNextAction": "لا يوجد إجراء تالٍ مجدول",
+    "nextAction": "الإجراء التالي",
+    "notes": "ملاحظات",
+    "noNotes": "لا توجد ملاحظات بعد.",
+    "created": "تاريخ الإنشاء: {{date}}",
+    "updated": "آخر تحديث: {{date}}"
   },
   "auth": {
     "fullName": "الاسم الكامل",
