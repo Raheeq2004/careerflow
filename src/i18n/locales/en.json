@@ -107,6 +107,33 @@
       "appliedAtRequired": "Applied date is required"
     }
   },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Saved only on this device. CareerFlow has no account or server.",
+    "yourLinks": "Your links",
+    "save": "Save Profile",
+    "saved": "Profile saved on this device.",
+    "saveError": "Could not save your profile. Your browser storage may be full or blocked.",
+    "fields": {
+      "fullName": "Full Name",
+      "currentRole": "Current Role",
+      "targetRole": "Target Role",
+      "preferredLocation": "Preferred Location",
+      "linkedinUrl": "LinkedIn URL",
+      "portfolioUrl": "Portfolio URL",
+      "githubUrl": "GitHub URL"
+    },
+    "links": {
+      "linkedin": "LinkedIn",
+      "portfolio": "Portfolio",
+      "github": "GitHub"
+    },
+    "errors": {
+      "textTooLong": "{{field}} must be {{max}} characters or less",
+      "urlTooLong": "{{field}} is too long",
+      "urlInvalid": "{{field}} must start with http:// or https://"
+    }
+  },
   "interviews": {
     "types": {
       "HR": "HR",

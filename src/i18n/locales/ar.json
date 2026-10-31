@@ -111,6 +111,33 @@
       "appliedAtRequired": "تاريخ التقديم مطلوب"
     }
   },
+  "profile": {
+    "title": "الملف الشخصي",
+    "subtitle": "يُحفظ على هذا الجهاز فقط. ليس لدى CareerFlow حساب أو خادم.",
+    "yourLinks": "روابطك",
+    "save": "حفظ الملف الشخصي",
+    "saved": "تم حفظ الملف الشخصي على هذا الجهاز.",
+    "saveError": "تعذّر حفظ ملفك الشخصي. قد تكون مساحة تخزين المتصفح ممتلئة أو محظورة.",
+    "fields": {
+      "fullName": "الاسم الكامل",
+      "currentRole": "الوظيفة الحالية",
+      "targetRole": "الوظيفة المستهدفة",
+      "preferredLocation": "الموقع المفضل",
+      "linkedinUrl": "رابط LinkedIn",
+      "portfolioUrl": "رابط معرض الأعمال",
+      "githubUrl": "رابط GitHub"
+    },
+    "links": {
+      "linkedin": "LinkedIn",
+      "portfolio": "معرض الأعمال",
+      "github": "GitHub"
+    },
+    "errors": {
+      "textTooLong": "يجب ألا يتجاوز {{field}} {{max}} حرفاً",
+      "urlTooLong": "{{field}} طويل جداً",
+      "urlInvalid": "يجب أن يبدأ {{field}} بـ http:// أو https://"
+    }
+  },
   "interviews": {
     "types": {
       "HR": "الموارد البشرية",

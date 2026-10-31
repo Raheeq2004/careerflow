@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useProfile } from "../../../context/ProfileContext";
 import ProfileForm from "../components/ProfileForm";
 
 const LINKS = [
-  { key: "linkedinUrl", label: "LinkedIn" },
-  { key: "portfolioUrl", label: "Portfolio" },
-  { key: "githubUrl", label: "GitHub" },
+  { key: "linkedinUrl", labelKey: "profile.links.linkedin" },
+  { key: "portfolioUrl", labelKey: "profile.links.portfolio" },
+  { key: "githubUrl", labelKey: "profile.links.github" },
 ];
 
 function ProfilePage() {
+  const { t } = useTranslation();
   const { profile, saveProfile } = useProfile();
   const [saveStatus, setSaveStatus] = useState(null);
 
@@ -23,10 +25,8 @@ function ProfilePage() {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-1">Profile</h2>
-      <p className="text-gray-600 text-sm mb-4">
-        Saved only on this device. CareerFlow has no account or server.
-      </p>
+      <h2 className="text-xl font-bold mb-1">{t("profile.title")}</h2>
+      <p className="text-gray-600 text-sm mb-4">{t("profile.subtitle")}</p>
 
       <ProfileForm
         initialData={profile}
@@ -36,7 +36,7 @@ function ProfilePage() {
 
       {savedLinks.length > 0 && (
         <section className="mt-6">
-          <h3 className="font-bold mb-2">Your links</h3>
+          <h3 className="font-bold mb-2">{t("profile.yourLinks")}</h3>
           <ul className="flex flex-col gap-1">
             {savedLinks.map((link) => (
               <li key={link.key}>
@@ -47,7 +47,7 @@ function ProfilePage() {
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               </li>
             ))}
