@@ -86,6 +86,31 @@
     "recentlyUpdated": "المحدّثة مؤخراً",
     "companyAZ": "الشركة (أ-ي)"
   },
+  "applicationForm": {
+    "company": "الشركة *",
+    "position": "المسمى الوظيفي *",
+    "location": "الموقع",
+    "workMode": "نمط العمل",
+    "jobUrl": "رابط الوظيفة",
+    "source": "المصدر",
+    "status": "الحالة *",
+    "appliedAt": "تاريخ التقديم *",
+    "nextActionAt": "تاريخ الإجراء التالي",
+    "nextActionDescription": "وصف الإجراء التالي",
+    "nextActionPlaceholder": "مثال: متابعة مع مسؤول التوظيف",
+    "clearNextAction": "مسح الإجراء التالي",
+    "notes": "ملاحظات",
+    "save": "حفظ التغييرات",
+    "add": "إضافة الطلب",
+    "cancel": "إلغاء",
+    "errors": {
+      "companyRequired": "اسم الشركة مطلوب",
+      "positionRequired": "المسمى الوظيفي مطلوب",
+      "jobUrlInvalid": "يجب أن يكون رابطاً صحيحاً (مثال: https://company.com/job)",
+      "statusRequired": "يرجى اختيار الحالة",
+      "appliedAtRequired": "تاريخ التقديم مطلوب"
+    }
+  },
   "interviews": {
     "types": {
       "HR": "الموارد البشرية",

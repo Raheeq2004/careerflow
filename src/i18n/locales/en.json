@@ -82,6 +82,31 @@
     "recentlyUpdated": "Recently Updated",
     "companyAZ": "Company A-Z"
   },
+  "applicationForm": {
+    "company": "Company *",
+    "position": "Position *",
+    "location": "Location",
+    "workMode": "Work Mode",
+    "jobUrl": "Job URL",
+    "source": "Source",
+    "status": "Status *",
+    "appliedAt": "Applied Date *",
+    "nextActionAt": "Next Action Date",
+    "nextActionDescription": "Next Action Description",
+    "nextActionPlaceholder": "e.g. Follow up with recruiter",
+    "clearNextAction": "Clear next action",
+    "notes": "Notes",
+    "save": "Save Changes",
+    "add": "Add Application",
+    "cancel": "Cancel",
+    "errors": {
+      "companyRequired": "Company is required",
+      "positionRequired": "Position is required",
+      "jobUrlInvalid": "Must be a valid URL (e.g. https://company.com/job)",
+      "statusRequired": "Please choose a status",
+      "appliedAtRequired": "Applied date is required"
+    }
+  },
   "interviews": {
     "types": {
       "HR": "HR",

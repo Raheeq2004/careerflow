@@ -12,9 +12,10 @@ function formatDate(date, language) {
 }
 
 function UpcomingActions() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); //hook
   const { upcomingActions } = useUpcomingActions();
-
+  //t is a function. The name stands for translate.
+  
   // Builds the title from data. Company and position are user data: not translated.
   function getTitle(action) {
     if (action.type === "application") {

@@ -1,21 +1,20 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 import Button from "../../../components/UI/Button";
 import styles from "./ApplicationForm.module.css";
-import { WORK_MODE_LABELS } from "./../data/applicationSchema";
+import { WORK_MODE_LABELS, applicationSchema } from "../data/applicationSchema";
 
-import { applicationSchema } from "../data/applicationSchema";
-
-
-//This is just a dictionary: "if the stored value is applied, the text to show is Applied
-const STATUS_LABELS = {
-  applied: "Applied",
-  screening: "Screening",
-  interview: "Interview",
-  offer: "Offer",
-  rejected: "Rejected",
-  withdrawn: "Withdrawn",
-};
+// The stored values. The text shown comes from the dictionary: status.* and workMode.*
+const STATUS_OPTIONS = [
+  "applied",
+  "screening",
+  "interview",
+  "offer",
+  "rejected",
+  "withdrawn",
+];
+const WORK_MODE_OPTIONS = Object.keys(WORK_MODE_LABELS);
 
 //starting values for a brand-new application
 const emptyDefaults = {
@@ -34,20 +33,19 @@ const emptyDefaults = {
 
 //useform This is the main function that creates and manages the entire form
 function ApplicationForm({ initialData, onSubmit, onCancel }) {
+  const { t } = useTranslation();
+
   const {
     register, //register — a function you call, once per field, passing the field's name as a string: register("company")
     handleSubmit,
     setValue, //changes a field from code instead of typing
     watch, //helper to read from the field
     formState: { errors, isSubmitting },
-  } = useForm
-  ({
+  } = useForm({
     defaultValues: initialData ?? emptyDefaults, //defaultValues — an object, the starting values for every field
     resolver: zodResolver(applicationSchema), //resolver — a function, not raw data. You don't pass the schema directly
   });
   //Think of zodResolver as a translator between the two libraries.
-  
-
 
   // watch() subscribes to one field's live value without making the
   // whole form controlled — only this component re-renders when
@@ -63,8 +61,7 @@ function ApplicationForm({ initialData, onSubmit, onCancel }) {
   }
 
   function handleClearNextAction() {
-    // Can't just "setNextActionAt('')" anymore — there's no such
-    // state. setValue tells RHF to update that field directly.
+    // setValue tells RHF to update that field directly.
     setValue("nextActionAt", "");
     setValue("nextActionDescription", "");
   }
@@ -73,83 +70,83 @@ function ApplicationForm({ initialData, onSubmit, onCancel }) {
   return (
     <form className={styles.form} onSubmit={handleSubmit(onValid)} noValidate>
       <label>
-        Company *
+        {t("applicationForm.company")}
         <input {...register("company")} />
         {errors.company && (
-          <p className={styles.formError}>{errors.company.message}</p>
+          <p className={styles.formError}>{t(errors.company.message)}</p>
         )}
       </label>
 
       <label>
-        Position *
+        {t("applicationForm.position")}
         <input {...register("position")} />
         {errors.position && (
-          <p className={styles.formError}>{errors.position.message}</p>
+          <p className={styles.formError}>{t(errors.position.message)}</p>
         )}
       </label>
 
       <label>
-        Location
+        {t("applicationForm.location")}
         <input {...register("location")} />
       </label>
 
       <label>
-        Work Mode
+        {t("applicationForm.workMode")}
         <select {...register("workMode")}>
-          {Object.entries(WORK_MODE_LABELS).map(([value, label]) => (
+          {WORK_MODE_OPTIONS.map((value) => (
             <option key={value} value={value}>
-              {label}
+              {t(`workMode.${value}`)}
             </option>
           ))}
         </select>
       </label>
 
       <label>
-        Job URL
+        {t("applicationForm.jobUrl")}
         <input {...register("jobUrl")} />
         {errors.jobUrl && (
-          <p className={styles.formError}>{errors.jobUrl.message}</p>
+          <p className={styles.formError}>{t(errors.jobUrl.message)}</p>
         )}
       </label>
 
       <label>
-        Source
+        {t("applicationForm.source")}
         <input {...register("source")} />
       </label>
 
       <label>
-        Status *
+        {t("applicationForm.status")}
         <select {...register("status")}>
-          {Object.entries(STATUS_LABELS).map(([value, label]) => (
+          {STATUS_OPTIONS.map((value) => (
             <option key={value} value={value}>
-              {label}
+              {t(`status.${value}`)}
             </option>
             //register :connects the <select> itself to React Hook Form
           ))}
         </select>
         {errors.status && (
-          <p className={styles.formError}>{errors.status.message}</p>
+          <p className={styles.formError}>{t(errors.status.message)}</p>
         )}
       </label>
 
       <label>
-        Applied Date *
+        {t("applicationForm.appliedAt")}
         <input type="date" {...register("appliedAt")} />
         {errors.appliedAt && (
-          <p className={styles.formError}>{errors.appliedAt.message}</p>
+          <p className={styles.formError}>{t(errors.appliedAt.message)}</p>
         )}
       </label>
 
       <label>
-        Next Action Date
+        {t("applicationForm.nextActionAt")}
         <input type="date" {...register("nextActionAt")} />
       </label>
 
       <label>
-        Next Action Description
+        {t("applicationForm.nextActionDescription")}
         <input
           type="text"
-          placeholder="e.g. Follow up with recruiter"
+          placeholder={t("applicationForm.nextActionPlaceholder")}
           {...register("nextActionDescription")}
         />
       </label>
@@ -160,21 +157,21 @@ function ApplicationForm({ initialData, onSubmit, onCancel }) {
           onClick={handleClearNextAction}
           className="text-sm text-gray-500 hover:underline text-start"
         >
-          Clear next action
+          {t("applicationForm.clearNextAction")}
         </button>
       )}
 
       <label>
-        Notes
+        {t("applicationForm.notes")}
         <textarea {...register("notes")} />
       </label>
 
       <div className={styles.formActions}>
         <Button type="submit" disabled={isSubmitting}>
-          {initialData ? "Save Changes" : "Add Application"}
+          {initialData ? t("applicationForm.save") : t("applicationForm.add")}
         </Button>
         <Button type="button" onClick={onCancel}>
-          Cancel
+          {t("applicationForm.cancel")}
         </Button>
       </div>
     </form>
@@ -182,8 +179,3 @@ function ApplicationForm({ initialData, onSubmit, onCancel }) {
 }
 
 export default ApplicationForm;
-
-
-//register("fieldName") on every input — the one-line replacement for value + onChange. It connects that specific input to the engine.
-
-//Where it replaces: your old single const [error, setError] = useState("") — instead of one generic message shared by the whole form, you now get one specific message per field, read as errors.company.message.

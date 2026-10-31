@@ -2,7 +2,7 @@
 
 @theme {
   /* ---------- Fonts ---------- */
-  --font-heading: "Manrope", "Cairo", system-ui, sans-serif;
+--font-heading: "Manrope", "Cairo", system-ui, sans-serif;
 --font-sans: "Inter", "Cairo", system-ui, sans-serif;
 
   /* ---------- Colors (named by role) ---------- */
