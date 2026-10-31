@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 import { useApplicationsFeature } from "../hooks/useApplicationsFeature";
 import { useInterviewsFeature } from "../../interviews/hooks/useInterviewsFeature";
 import ApplicationForm from "../components/ApplicationForm";
@@ -7,6 +8,7 @@ import InterviewList from "../../interviews/components/InterviewList";
 import Button from "../../../components/UI/Button";
 
 function ApplicationDetailsPage() {
+  const { t } = useTranslation();
   const { applicationId } = useParams(); //to read the applicationId from the URL
   const navigate = useNavigate();
   const { applications, submitApplication, deleteApplication } =
@@ -31,9 +33,9 @@ function ApplicationDetailsPage() {
   if (!application) {
     return (
       <div>
-        <p className="text-gray-500">Application not found.</p>
+        <p className="text-gray-500">{t("details.notFound")}</p>
         <Button onClick={() => navigate("/app/applications")}>
-          Back to Applications
+          {t("details.back")}
         </Button>
       </div>
     );
@@ -43,9 +45,22 @@ function ApplicationDetailsPage() {
     <div className="max-w-3xl">
       <button
         onClick={() => navigate("/app/applications")}
-        className="text-sm text-gray-500 mb-4 hover:underline"
+        className="mb-4 inline-flex items-center gap-1.5 text-sm text-gray-500 hover:underline"
       >
-        ← Back to Applications
+        {/* The arrow turns around when the page direction is right-to-left (rtl:rotate-180) */}
+        <svg
+          className="size-4 rtl:rotate-180"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        {t("details.back")}
       </button>
 
       {isFormOpen ? (
@@ -66,30 +81,47 @@ function ApplicationDetailsPage() {
               </p>
             </div>
             <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold capitalize bg-gray-200 text-gray-700 shrink-0 ms-4">
-              {application.status}
+              {t(`status.${application.status}`, {
+                defaultValue: application.status,
+              })}
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
-              <p className="text-xs text-gray-400 uppercase">Location</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.location")}
+              </p>
               <p>{application.location || "—"}</p>
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase">Work Mode</p>
-              <p className="capitalize">{application.workMode || "—"}</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.workMode")}
+              </p>
+              <p className="capitalize">
+                {application.workMode
+                  ? t(`workMode.${application.workMode}`, {
+                      defaultValue: application.workMode,
+                    })
+                  : "—"}
+              </p>
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase">Source</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.source")}
+              </p>
               <p>{application.source || "—"}</p>
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase">Job URL</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.jobUrl")}
+              </p>
               {application.jobUrl ? (
                 <a
                   href={application.jobUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  dir="ltr"
                   className="text-blue-600 hover:underline break-all"
                 >
                   {application.jobUrl}
@@ -99,40 +131,56 @@ function ApplicationDetailsPage() {
               )}
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase">Applied Date</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.appliedDate")}
+              </p>
               <p>{application.appliedAt || "—"}</p>
             </div>
             <div>
               <p className="text-xs text-gray-400 uppercase">
-                Next Action Date
+                {t("details.nextActionDate")}
               </p>
-              <p>{application.nextActionAt || "No next action scheduled"}</p>
+              <p>{application.nextActionAt || t("details.noNextAction")}</p>
             </div>
           </div>
 
           {application.nextActionDescription && (
             <div className="mb-6">
-              <p className="text-xs text-gray-400 uppercase">Next Action</p>
+              <p className="text-xs text-gray-400 uppercase">
+                {t("details.nextAction")}
+              </p>
               <p>{application.nextActionDescription}</p>
             </div>
           )}
 
           <div className="mb-6">
-            <p className="text-xs text-gray-400 uppercase mb-1">Notes</p>
+            <p className="text-xs text-gray-400 uppercase mb-1">
+              {t("details.notes")}
+            </p>
             <p className="whitespace-pre-wrap break-words text-gray-700">
-              {application.notes || "No notes yet."}
+              {application.notes || t("details.noNotes")}
             </p>
           </div>
 
           <div className="flex gap-6 text-xs text-gray-400 mb-6">
-            <p>Created: {application.createdAt?.slice(0, 10)}</p>
-            <p>Last Updated: {application.updatedAt?.slice(0, 10)}</p>
+            <p>
+              {t("details.created", {
+                date: application.createdAt?.slice(0, 10),
+              })}
+            </p>
+            <p>
+              {t("details.updated", {
+                date: application.updatedAt?.slice(0, 10),
+              })}
+            </p>
           </div>
 
           <div className="flex gap-3">
-            <Button onClick={() => setIsFormOpen(true)}>Edit</Button>
+            <Button onClick={() => setIsFormOpen(true)}>
+              {t("common.edit")}
+            </Button>
             <Button variant="danger" onClick={handleDeleteClick}>
-              Delete
+              {t("common.delete")}
             </Button>
           </div>
         </div>

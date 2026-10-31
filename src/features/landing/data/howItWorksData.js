@@ -1,20 +1,17 @@
 export const howItWorksSteps = [
   {
     id: 1,
-    title: "Add an application",
-    description:
-      "Enter the company, the role, the work mode and the date you applied.",
+    titleKey: "landing.howItWorks.steps.add.title",
+    descriptionKey: "landing.howItWorks.steps.add.description",
   },
   {
     id: 2,
-    title: "Move it through each stage",
-    description:
-      "Update the status from Applied to Interview to Offer as things happen.",
+    titleKey: "landing.howItWorks.steps.move.title",
+    descriptionKey: "landing.howItWorks.steps.move.description",
   },
   {
     id: 3,
-    title: "Prepare and follow up",
-    description:
-      "Add interviews with dates and notes, then check your dashboard to see what is next.",
+    titleKey: "landing.howItWorks.steps.prepare.title",
+    descriptionKey: "landing.howItWorks.steps.prepare.description",
   },
 ];

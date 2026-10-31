@@ -1,44 +1,39 @@
+// Data holds KEYS; the icon is an emoji and is not translated
 export const featureItems = [
   {
     id: 1,
     icon: "📋",
-    title: "Application tracker",
-    description:
-      "Save every role with company, status and work mode. Search and filter in one click.",
+    titleKey: "landing.features.items.tracker.title",
+    descriptionKey: "landing.features.items.tracker.description",
   },
   {
     id: 2,
     icon: "📅",
-    title: "Interview planner",
-    description:
-      "Keep interview dates, formats and notes next to the application they belong to.",
+    titleKey: "landing.features.items.planner.title",
+    descriptionKey: "landing.features.items.planner.description",
   },
   {
     id: 3,
     icon: "📊",
-    title: "Progress dashboard",
-    description:
-      "See totals and stages at a glance so you know where to focus.",
+    titleKey: "landing.features.items.dashboard.title",
+    descriptionKey: "landing.features.items.dashboard.description",
   },
   {
     id: 4,
     icon: "👤",
-    title: "Profile and links",
-    description:
-      "Store your target role and your LinkedIn, GitHub and portfolio links once.",
+    titleKey: "landing.features.items.profile.title",
+    descriptionKey: "landing.features.items.profile.description",
   },
   {
     id: 5,
     icon: "↕️",
-    title: "Sorting preferences",
-    description:
-      "Choose how your list is ordered by default, like newest or company A–Z.",
+    titleKey: "landing.features.items.sorting.title",
+    descriptionKey: "landing.features.items.sorting.description",
   },
   {
     id: 6,
     icon: "🔒",
-    title: "Private by design",
-    description:
-      "Your data is saved on your own device. No third party sees your search.",
+    titleKey: "landing.features.items.privacy.title",
+    descriptionKey: "landing.features.items.privacy.description",
   },
 ];

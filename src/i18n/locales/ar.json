@@ -86,13 +86,253 @@
     "recentlyUpdated": "المحدّثة مؤخراً",
     "companyAZ": "الشركة (أ-ي)"
   },
+  "applicationForm": {
+    "company": "الشركة *",
+    "position": "المسمى الوظيفي *",
+    "location": "الموقع",
+    "workMode": "نمط العمل",
+    "jobUrl": "رابط الوظيفة",
+    "source": "المصدر",
+    "status": "الحالة *",
+    "appliedAt": "تاريخ التقديم *",
+    "nextActionAt": "تاريخ الإجراء التالي",
+    "nextActionDescription": "وصف الإجراء التالي",
+    "nextActionPlaceholder": "مثال: متابعة مع مسؤول التوظيف",
+    "clearNextAction": "مسح الإجراء التالي",
+    "notes": "ملاحظات",
+    "save": "حفظ التغييرات",
+    "add": "إضافة الطلب",
+    "cancel": "إلغاء",
+    "errors": {
+      "companyRequired": "اسم الشركة مطلوب",
+      "positionRequired": "المسمى الوظيفي مطلوب",
+      "jobUrlInvalid": "يجب أن يكون رابطاً صحيحاً (مثال: https://company.com/job)",
+      "statusRequired": "يرجى اختيار الحالة",
+      "appliedAtRequired": "تاريخ التقديم مطلوب"
+    }
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "subtitle": "يُحفظ على هذا الجهاز فقط. ليس لدى CareerFlow حساب أو خادم.",
+    "yourLinks": "روابطك",
+    "save": "حفظ الملف الشخصي",
+    "saved": "تم حفظ الملف الشخصي على هذا الجهاز.",
+    "saveError": "تعذّر حفظ ملفك الشخصي. قد تكون مساحة تخزين المتصفح ممتلئة أو محظورة.",
+    "fields": {
+      "fullName": "الاسم الكامل",
+      "currentRole": "الوظيفة الحالية",
+      "targetRole": "الوظيفة المستهدفة",
+      "preferredLocation": "الموقع المفضل",
+      "linkedinUrl": "رابط LinkedIn",
+      "portfolioUrl": "رابط معرض الأعمال",
+      "githubUrl": "رابط GitHub"
+    },
+    "links": {
+      "linkedin": "LinkedIn",
+      "portfolio": "معرض الأعمال",
+      "github": "GitHub"
+    },
+    "errors": {
+      "textTooLong": "يجب ألا يتجاوز {{field}} {{max}} حرفاً",
+      "urlTooLong": "{{field}} طويل جداً",
+      "urlInvalid": "يجب أن يبدأ {{field}} بـ http:// أو https://"
+    }
+  },
+  "landing": {
+    "nav": {
+      "home": "الرئيسية",
+      "features": "المزايا",
+      "howItWorks": "كيف يعمل",
+      "contact": "تواصل معنا",
+      "dashboard": "لوحة التحكم",
+      "login": "تسجيل الدخول",
+      "signUp": "إنشاء حساب"
+    },
+    "hero": {
+      "badge": "متتبّعك الشخصي للبحث عن عمل",
+      "title": "احتفظ بكل طلبات التوظيف في مكان واحد هادئ",
+      "text": "يساعدك CareerFlow على تتبّع طلباتك، والتخطيط لمقابلاتك، ومشاهدة تقدّمك بنظرة واحدة. بلا جداول بيانات ولا رسائل ضائعة.",
+      "ctaPrimary": "أنشئ حساباً مجانياً",
+      "ctaSecondary": "شاهد كيف يعمل",
+      "note": "مجاني · وبياناتك تبقى على جهازك",
+      "thisWeek": "هذا الأسبوع",
+      "stats": {
+        "applied": "تم التقديم",
+        "interviews": "مقابلات",
+        "offer": "عرض"
+      },
+      "apps": {
+        "frontendRole": "مطوّر واجهات أمامية",
+        "frontendCompany": "Acme Studio · عن بُعد",
+        "reactRole": "مهندس React",
+        "reactCompany": "Northwind · هجين"
+      },
+      "notices": {
+        "interviewTitle": "مقابلة غداً",
+        "interviewDetail": "10:00 · Acme Studio",
+        "offerTitle": "تم استلام عرض جديد",
+        "offerDetail": "Bluepeak · عن بُعد"
+      }
+    },
+    "features": {
+      "eyebrow": "المزايا",
+      "title": "كل ما تحتاجه لتبقى منظّماً",
+      "description": "ست أدوات مركّزة تغطي رحلة البحث عن عمل كلها.",
+      "items": {
+        "tracker": {
+          "title": "متتبّع الطلبات",
+          "description": "احفظ كل وظيفة مع الشركة والحالة ونمط العمل. ابحث وصفِّ بنقرة واحدة."
+        },
+        "planner": {
+          "title": "مخطّط المقابلات",
+          "description": "احتفظ بمواعيد المقابلات وأشكالها وملاحظاتها بجانب الطلب الذي تنتمي إليه."
+        },
+        "dashboard": {
+          "title": "لوحة المتابعة",
+          "description": "شاهد الإجماليات والمراحل بنظرة واحدة لتعرف أين تركّز."
+        },
+        "profile": {
+          "title": "الملف الشخصي والروابط",
+          "description": "احفظ وظيفتك المستهدفة وروابط LinkedIn وGitHub ومعرض أعمالك مرة واحدة."
+        },
+        "sorting": {
+          "title": "تفضيلات الترتيب",
+          "description": "اختر كيف تُرتَّب قائمتك افتراضياً، مثل الأحدث أو اسم الشركة (أ-ي)."
+        },
+        "privacy": {
+          "title": "خصوصية بالتصميم",
+          "description": "بياناتك محفوظة على جهازك. لا يطّلع طرف ثالث على بحثك."
+        }
+      }
+    },
+    "howItWorks": {
+      "eyebrow": "كيف يعمل",
+      "title": "من أول طلب إلى العرض النهائي في ثلاث خطوات",
+      "description": "جهّزه في أقل من دقيقة. لا شيء لتثبيته ولا بيانات حساب لمشاركتها.",
+      "steps": {
+        "add": {
+          "title": "أضف طلباً",
+          "description": "أدخل اسم الشركة والوظيفة ونمط العمل وتاريخ التقديم."
+        },
+        "move": {
+          "title": "انقله عبر كل مرحلة",
+          "description": "حدّث الحالة من «تم التقديم» إلى «مقابلة» ثم «عرض» كلما تقدّمت الأمور."
+        },
+        "prepare": {
+          "title": "استعد وتابع",
+          "description": "أضف المقابلات مع تواريخها وملاحظاتها، ثم افتح لوحتك لترى ما التالي."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "تواصل معنا",
+      "title": "أسئلة أو ملاحظات؟ يسعدنا أن نسمع منك",
+      "description": "أخبرنا بما يعمل جيداً وما يربكك وما تريد أن يفعله CareerFlow لاحقاً. نقرأ كل رسالة.",
+      "details": {
+        "email": "البريد الإلكتروني",
+        "responseTime": "مدة الرد",
+        "responseTimeValue": "خلال يومي عمل",
+        "feedback": "الملاحظات",
+        "feedbackValue": "أفكارك للمزايا الجديدة مرحّب بها دائماً"
+      },
+      "form": {
+        "name": "الاسم الكامل",
+        "namePlaceholder": "اسمك",
+        "email": "البريد الإلكتروني",
+        "emailPlaceholder": "you@example.com",
+        "subject": "الموضوع",
+        "subjectPlaceholder": "ما موضوع رسالتك؟",
+        "message": "الرسالة",
+        "messagePlaceholder": "كيف يمكننا مساعدتك؟",
+        "send": "إرسال الرسالة",
+        "sent": "شكراً! وصلت رسالتك."
+      },
+      "errors": {
+        "nameRequired": "يرجى إدخال اسمك.",
+        "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح.",
+        "subjectRequired": "يرجى إضافة موضوع قصير.",
+        "messageShort": "يرجى كتابة 10 أحرف على الأقل.",
+        "messageLong": "يرجى ألا تتجاوز رسالتك 1000 حرف."
+      }
+    },
+    "footer": {
+      "tagline": "مكان هادئ وخاص لتتبّع بحثك عن عمل.",
+      "rights": "© {{year}} CareerFlow. جميع الحقوق محفوظة.",
+      "product": "المنتج",
+      "account": "الحساب",
+      "legal": "قانوني",
+      "privacy": "الخصوصية",
+      "terms": "الشروط"
+    }
+  },
   "interviews": {
+    "title": "المقابلات",
+    "add": "+ إضافة مقابلة",
+    "empty": "لا توجد مقابلات بعد.",
+    "noDate": "لم يُحدَّد موعد",
+    "interviewer": "القائم بالمقابلة: {{name}}",
+    "questionCount_zero": "لا أسئلة",
+    "questionCount_one": "سؤال واحد",
+    "questionCount_two": "سؤالان",
+    "questionCount_few": "{{count}} أسئلة",
+    "questionCount_many": "{{count}} سؤالاً",
+    "questionCount_other": "{{count}} سؤال",
     "types": {
       "HR": "الموارد البشرية",
       "Technical": "تقنية",
-      "Behavioral": "سلوكية",
-      "Final": "نهائية"
+      "Take-home Task": "مهمة منزلية",
+      "Manager": "المدير",
+      "Final": "نهائية",
+      "Other": "أخرى"
+    },
+    "statuses": {
+      "Scheduled": "مجدولة",
+      "Completed": "مكتملة",
+      "Cancelled": "ملغاة"
+    },
+    "form": {
+      "type": "النوع",
+      "scheduledAt": "موعد المقابلة (التاريخ والوقت)",
+      "status": "الحالة",
+      "interviewer": "القائم بالمقابلة / الفريق",
+      "notes": "ملاحظات",
+      "save": "حفظ",
+      "cancel": "إلغاء"
     }
+  },
+  "questions": {
+    "title": "الأسئلة",
+    "empty": "لا توجد أسئلة بعد.",
+    "add": "+ إضافة سؤال",
+    "q": "س: {{text}}",
+    "myAnswer": "إجابتي: {{text}}",
+    "answeredWell": "أجبت جيداً",
+    "needsReview": "تحتاج مراجعة",
+    "reviewNotes": "ملاحظات المراجعة: {{text}}",
+    "form": {
+      "question": "السؤال",
+      "myAnswer": "إجابتي",
+      "answeredWellCheck": "هل أجبت عنه جيداً؟",
+      "reviewNotes": "ملاحظات المراجعة",
+      "save": "حفظ",
+      "cancel": "إلغاء"
+    }
+  },
+  "details": {
+    "notFound": "لم يتم العثور على الطلب.",
+    "back": "العودة إلى الطلبات",
+    "location": "الموقع",
+    "workMode": "نمط العمل",
+    "source": "المصدر",
+    "jobUrl": "رابط الوظيفة",
+    "appliedDate": "تاريخ التقديم",
+    "nextActionDate": "تاريخ الإجراء التالي",
+    "noNextAction": "لا يوجد إجراء تالٍ مجدول",
+    "nextAction": "الإجراء التالي",
+    "notes": "ملاحظات",
+    "noNotes": "لا توجد ملاحظات بعد.",
+    "created": "تاريخ الإنشاء: {{date}}",
+    "updated": "آخر تحديث: {{date}}"
   },
   "auth": {
     "fullName": "الاسم الكامل",

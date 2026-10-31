@@ -1,7 +1,7 @@
+import { useTranslation } from "react-i18next";
 import FloatingNotice from "./FloatingNotice";
 import { heroStats, heroApplications } from "../data/heroData";
 //heroData.js → HeroPreview :--this is data for 2 arrays
-
 
 //objects defined once outside the component
 //so when the design changes , edit the object not every data item
@@ -11,73 +11,73 @@ const toneText = {
   warn: "text-warn",
 };
 
+// The keys are the STORED status values (lowercase), the same as in the real app.
+// The shown word comes from the dictionary: status.*
 const statusStyles = {
-  Interview: "bg-accent text-white",
-  Applied: "bg-brand text-white",
-  Offer: "bg-warn text-white",
+  interview: "bg-accent text-white",
+  applied: "bg-brand text-white",
+  offer: "bg-warn text-white",
 };
-//div 3 for the 3 grid in the left , and the data comes from heredata
+
 function HeroPreview() {
+  const { t } = useTranslation();
+
   return (
     <div className="relative rounded-3xl bg-brand-gradient px-4 py-14 sm:px-10">
       <div className="rounded-card bg-white p-5 shadow-elevated">
-        <h2 className="font-heading text-h3 font-bold text-navy">This week</h2>
+        <h2 className="font-heading text-h3 font-bold text-navy">
+          {t("landing.hero.thisWeek")}
+        </h2>
 
         <div className="mt-4 grid grid-cols-3 gap-3">
           {heroStats.map((stat) => (
-            <div key={stat.label} className="rounded-control bg-page p-3">
+            <div key={stat.labelKey} className="rounded-control bg-page p-3">
               <p
                 className={`font-heading text-2xl font-bold ${toneText[stat.tone]}`}
               >
                 {stat.value}
               </p>
-              <p className="text-sm text-muted">{stat.label}</p>
+              <p className="text-sm text-muted">{t(stat.labelKey)}</p>
             </div>
           ))}
         </div>
 
         <ul className="mt-4 flex flex-col gap-3">
-          {heroApplications.map(
-            (
-              app, //map through the second array
-            ) => (
-              <li
-                key={app.id}
-                className="flex items-center justify-between gap-3 rounded-control border border-line p-3"
+          {heroApplications.map((app) => (
+            <li
+              key={app.id}
+              className="flex items-center justify-between gap-3 rounded-control border border-line p-3"
+            >
+              <div>
+                <p className="text-[15px] font-semibold text-ink">
+                  {t(app.roleKey)}
+                </p>
+                <p className="text-sm text-muted">{t(app.companyKey)}</p>
+              </div>
+              <span
+                className={`rounded-full px-3 py-1 text-sm font-medium ${statusStyles[app.status]}`}
               >
-                <div>
-                  <p className="text-[15px] font-semibold text-ink">
-                    {app.role}
-                  </p>
-                  <p className="text-sm text-muted">{app.company}</p>
-                </div>
-                <span
-                  className={`rounded-full px-3 py-1 text-sm font-medium ${statusStyles[app.status]}`} //statusStyles["Interview"] object is at the top for the style
-                >
-                  {app.status}
-                </span>
-              </li>
-            ),
-          )}
+                {t(`status.${app.status}`)}
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <FloatingNotice
-        title="Interview tomorrow"
-        detail="10:00 · Acme Studio"
+        title={t("landing.hero.notices.interviewTitle")}
+        detail={t("landing.hero.notices.interviewDetail")}
         dotClass="bg-accent"
-        className="inset-s-3 ... lg:-inset-s-10 lg:top-0"
+        className="inset-s-3 top-3 lg:-inset-s-10 lg:top-0"
       />
       <FloatingNotice
-        title="New offer received"
-        detail="Bluepeak · Remote"
+        title={t("landing.hero.notices.offerTitle")}
+        detail={t("landing.hero.notices.offerDetail")}
         dotClass="bg-warn"
-        className="bottom-3 inset-e-3 ... lg:inset-e-6"
+        className="bottom-3 inset-e-3 lg:bottom-6 lg:inset-e-6"
       />
     </div>
   );
 }
 
 export default HeroPreview;
-
-//<FloatingNotice props from that file

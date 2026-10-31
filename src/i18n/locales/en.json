@@ -82,13 +82,249 @@
     "recentlyUpdated": "Recently Updated",
     "companyAZ": "Company A-Z"
   },
+  "applicationForm": {
+    "company": "Company *",
+    "position": "Position *",
+    "location": "Location",
+    "workMode": "Work Mode",
+    "jobUrl": "Job URL",
+    "source": "Source",
+    "status": "Status *",
+    "appliedAt": "Applied Date *",
+    "nextActionAt": "Next Action Date",
+    "nextActionDescription": "Next Action Description",
+    "nextActionPlaceholder": "e.g. Follow up with recruiter",
+    "clearNextAction": "Clear next action",
+    "notes": "Notes",
+    "save": "Save Changes",
+    "add": "Add Application",
+    "cancel": "Cancel",
+    "errors": {
+      "companyRequired": "Company is required",
+      "positionRequired": "Position is required",
+      "jobUrlInvalid": "Must be a valid URL (e.g. https://company.com/job)",
+      "statusRequired": "Please choose a status",
+      "appliedAtRequired": "Applied date is required"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Saved only on this device. CareerFlow has no account or server.",
+    "yourLinks": "Your links",
+    "save": "Save Profile",
+    "saved": "Profile saved on this device.",
+    "saveError": "Could not save your profile. Your browser storage may be full or blocked.",
+    "fields": {
+      "fullName": "Full Name",
+      "currentRole": "Current Role",
+      "targetRole": "Target Role",
+      "preferredLocation": "Preferred Location",
+      "linkedinUrl": "LinkedIn URL",
+      "portfolioUrl": "Portfolio URL",
+      "githubUrl": "GitHub URL"
+    },
+    "links": {
+      "linkedin": "LinkedIn",
+      "portfolio": "Portfolio",
+      "github": "GitHub"
+    },
+    "errors": {
+      "textTooLong": "{{field}} must be {{max}} characters or less",
+      "urlTooLong": "{{field}} is too long",
+      "urlInvalid": "{{field}} must start with http:// or https://"
+    }
+  },
+  "landing": {
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "howItWorks": "How it works",
+      "contact": "Contact",
+      "dashboard": "Dashboard",
+      "login": "Login",
+      "signUp": "Sign Up"
+    },
+    "hero": {
+      "badge": "Your personal job-search tracker",
+      "title": "Keep every job application in one calm place",
+      "text": "CareerFlow helps you track applications, plan interviews and see your progress at a glance. No spreadsheets, no lost emails.",
+      "ctaPrimary": "Create free account",
+      "ctaSecondary": "See how it works",
+      "note": "Free to use · Your data stays on your device",
+      "thisWeek": "This week",
+      "stats": {
+        "applied": "Applied",
+        "interviews": "Interviews",
+        "offer": "Offer"
+      },
+      "apps": {
+        "frontendRole": "Frontend Developer",
+        "frontendCompany": "Acme Studio · Remote",
+        "reactRole": "React Engineer",
+        "reactCompany": "Northwind · Hybrid"
+      },
+      "notices": {
+        "interviewTitle": "Interview tomorrow",
+        "interviewDetail": "10:00 · Acme Studio",
+        "offerTitle": "New offer received",
+        "offerDetail": "Bluepeak · Remote"
+      }
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "Everything you need to stay organised",
+      "description": "Six focused tools that cover the whole job search.",
+      "items": {
+        "tracker": {
+          "title": "Application tracker",
+          "description": "Save every role with company, status and work mode. Search and filter in one click."
+        },
+        "planner": {
+          "title": "Interview planner",
+          "description": "Keep interview dates, formats and notes next to the application they belong to."
+        },
+        "dashboard": {
+          "title": "Progress dashboard",
+          "description": "See totals and stages at a glance so you know where to focus."
+        },
+        "profile": {
+          "title": "Profile and links",
+          "description": "Store your target role and your LinkedIn, GitHub and portfolio links once."
+        },
+        "sorting": {
+          "title": "Sorting preferences",
+          "description": "Choose how your list is ordered by default, like newest or company A–Z."
+        },
+        "privacy": {
+          "title": "Private by design",
+          "description": "Your data is saved on your own device. No third party sees your search."
+        }
+      }
+    },
+    "howItWorks": {
+      "eyebrow": "How it works",
+      "title": "From first application to final offer in three steps",
+      "description": "Set up in under a minute. Nothing to install and no account details to share.",
+      "steps": {
+        "add": {
+          "title": "Add an application",
+          "description": "Enter the company, the role, the work mode and the date you applied."
+        },
+        "move": {
+          "title": "Move it through each stage",
+          "description": "Update the status from Applied to Interview to Offer as things happen."
+        },
+        "prepare": {
+          "title": "Prepare and follow up",
+          "description": "Add interviews with dates and notes, then check your dashboard to see what is next."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "Contact us",
+      "title": "Questions or feedback? We would love to hear from you",
+      "description": "Tell us what is working, what is confusing or what you would like CareerFlow to do next. We read every message.",
+      "details": {
+        "email": "Email",
+        "responseTime": "Response time",
+        "responseTimeValue": "Within 2 working days",
+        "feedback": "Feedback",
+        "feedbackValue": "Feature ideas are always welcome"
+      },
+      "form": {
+        "name": "Full name",
+        "namePlaceholder": "Your name",
+        "email": "Email address",
+        "emailPlaceholder": "you@example.com",
+        "subject": "Subject",
+        "subjectPlaceholder": "What is this about?",
+        "message": "Message",
+        "messagePlaceholder": "How can we help?",
+        "send": "Send message",
+        "sent": "Thanks! Your message has been received."
+      },
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subjectRequired": "Please add a short subject.",
+        "messageShort": "Please write at least 10 characters.",
+        "messageLong": "Please keep your message under 1000 characters."
+      }
+    },
+    "footer": {
+      "tagline": "A calm, private place to track your job search.",
+      "rights": "© {{year}} CareerFlow. All rights reserved.",
+      "product": "Product",
+      "account": "Account",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
   "interviews": {
+    "title": "Interviews",
+    "add": "+ Add Interview",
+    "empty": "No interviews added yet.",
+    "noDate": "No date set",
+    "interviewer": "Interviewer: {{name}}",
+    "questionCount_one": "{{count}} question",
+    "questionCount_other": "{{count}} questions",
     "types": {
       "HR": "HR",
       "Technical": "Technical",
-      "Behavioral": "Behavioral",
-      "Final": "Final"
+      "Take-home Task": "Take-home Task",
+      "Manager": "Manager",
+      "Final": "Final",
+      "Other": "Other"
+    },
+    "statuses": {
+      "Scheduled": "Scheduled",
+      "Completed": "Completed",
+      "Cancelled": "Cancelled"
+    },
+    "form": {
+      "type": "Type",
+      "scheduledAt": "Scheduled Date/Time",
+      "status": "Status",
+      "interviewer": "Interviewer / Team",
+      "notes": "Notes",
+      "save": "Save",
+      "cancel": "Cancel"
     }
+  },
+  "questions": {
+    "title": "Questions",
+    "empty": "No questions added yet.",
+    "add": "+ Add question",
+    "q": "Q: {{text}}",
+    "myAnswer": "My answer: {{text}}",
+    "answeredWell": "Answered well",
+    "needsReview": "Needs review",
+    "reviewNotes": "Review notes: {{text}}",
+    "form": {
+      "question": "Question",
+      "myAnswer": "My Answer",
+      "answeredWellCheck": "Did I answer it well?",
+      "reviewNotes": "Review Notes",
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "details": {
+    "notFound": "Application not found.",
+    "back": "Back to Applications",
+    "location": "Location",
+    "workMode": "Work Mode",
+    "source": "Source",
+    "jobUrl": "Job URL",
+    "appliedDate": "Applied Date",
+    "nextActionDate": "Next Action Date",
+    "noNextAction": "No next action scheduled",
+    "nextAction": "Next Action",
+    "notes": "Notes",
+    "noNotes": "No notes yet.",
+    "created": "Created: {{date}}",
+    "updated": "Last Updated: {{date}}"
   },
   "auth": {
     "fullName": "Full name",

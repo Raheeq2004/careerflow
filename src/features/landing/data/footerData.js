@@ -1,27 +1,28 @@
+// Data holds KEYS. Links that are also in the navbar reuse the navbar keys.
 export const footerColumns = [
   {
     id: "product",
-    title: "Product",
+    titleKey: "landing.footer.product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "How it works", href: "#how-it-works" },
+      { labelKey: "landing.nav.features", href: "#features" },
+      { labelKey: "landing.nav.howItWorks", href: "#how-it-works" },
     ],
   },
   {
     id: "account",
-    title: "Account",
+    titleKey: "landing.footer.account",
     links: [
-      { label: "Login", to: "/login" },
-      { label: "Sign Up", to: "/signup" },
+      { labelKey: "landing.nav.login", to: "/login" },
+      { labelKey: "landing.nav.signUp", to: "/signup" },
     ],
   },
   {
     id: "legal",
-    title: "Legal",
+    titleKey: "landing.footer.legal",
     links: [
-      { label: "Privacy", to: "/privacy" },
-      { label: "Terms", to: "/terms" },
-      { label: "Contact", href: "#contact" },
+      { labelKey: "landing.footer.privacy", to: "/privacy" },
+      { labelKey: "landing.footer.terms", to: "/terms" },
+      { labelKey: "landing.nav.contact", href: "#contact" },
     ],
   },
 ];

@@ -1,15 +1,28 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useInterviewsFeature } from "../hooks/useInterviewsFeature";
 import InterviewForm from "./InterviewForm";
 import QuestionList from "./QuestionList";
 
+// The keys are the STORED values: the styles are chosen from them, the text from the dictionary
 const STATUS_STYLES = {
   Scheduled: "bg-yellow-100 text-yellow-800",
   Completed: "bg-green-100 text-green-800",
   Cancelled: "bg-gray-200 text-gray-600",
 };
+
+// The date follows the app language, not the browser's ("ar-u-nu-latn" = Latin digits)
+function formatDateTime(value, language) {
+  const locale = language === "ar" ? "ar-u-nu-latn" : "en";
+  return new Date(value).toLocaleString(locale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+}
+
 //only takes { id } as a prop — no more interview, isExpanded, onToggleExpand
 function InterviewCard({ id }) {
+  const { t, i18n } = useTranslation();
   const {
     getInterviewById,
     updateInterview,
@@ -18,7 +31,6 @@ function InterviewCard({ id }) {
   } = useInterviewsFeature();
 
   //Fetches its own interview + questions using just id
-
   const interview = getInterviewById(id);
   const questions = getQuestionsForInterview(id);
 
@@ -50,26 +62,32 @@ function InterviewCard({ id }) {
         onClick={() => setIsExpanded((prev) => !prev)}
       >
         <div className="flex items-center gap-2">
-          <h3 className="font-semibold text-gray-800">{interview.type}</h3>
+          <h3 className="font-semibold text-gray-800">
+            {t(`interviews.types.${interview.type}`, {
+              defaultValue: interview.type,
+            })}
+          </h3>
           <span
             className={`px-2 py-0.5 rounded-full text-xs font-semibold ${STATUS_STYLES[interview.status] || "bg-gray-100 text-gray-600"}`}
           >
-            {interview.status}
+            {t(`interviews.statuses.${interview.status}`, {
+              defaultValue: interview.status,
+            })}
           </span>
         </div>
         <p className="text-sm text-gray-500 mt-1">
           {interview.scheduledAt
-            ? new Date(interview.scheduledAt).toLocaleString()
-            : "No date set"}
+            ? formatDateTime(interview.scheduledAt, i18n.resolvedLanguage)
+            : t("interviews.noDate")}
         </p>
         {interview.interviewer && (
           <p className="text-sm text-gray-500">
-            Interviewer: {interview.interviewer}
+            {t("interviews.interviewer", { name: interview.interviewer })}
           </p>
         )}
         <p className="text-xs text-indigo-600 mt-1">
-          {questions.length} question{questions.length !== 1 ? "s" : ""} ·{" "}
-          {isExpanded ? "Hide" : "Show"}
+          {t("interviews.questionCount", { count: questions.length })} ·{" "}
+          {isExpanded ? t("common.hide") : t("common.show")}
         </p>
       </div>
 
@@ -78,13 +96,13 @@ function InterviewCard({ id }) {
           onClick={() => setIsEditing(true)}
           className="text-xs text-blue-600 hover:underline"
         >
-          Edit
+          {t("common.edit")}
         </button>
         <button
           onClick={() => deleteInterview(id)}
           className="text-xs text-red-600 hover:underline"
         >
-          Delete
+          {t("common.delete")}
         </button>
       </div>
 

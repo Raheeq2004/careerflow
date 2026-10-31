@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useInterviewsFeature } from "../hooks/useInterviewsFeature";
 import QuestionCard from "./QuestionCard";
 import QuestionForm from "./QuestionForm";
 
 //Now receives only interviewId, and calls the hook itself
 function QuestionList({ interviewId }) {
+  const { t } = useTranslation();
   const {
     getQuestionsForInterview,
     addQuestion,
@@ -43,10 +45,12 @@ function QuestionList({ interviewId }) {
 
   return (
     <div className="mt-4 ps-4 border-s-2 border-gray-200 space-y-3">
-      <p className="text-sm font-semibold text-gray-700">Questions</p>
+      <p className="text-sm font-semibold text-gray-700">
+        {t("questions.title")}
+      </p>
 
       {questions.length === 0 && !isFormOpen && (
-        <p className="text-sm text-gray-400">No questions added yet.</p>
+        <p className="text-sm text-gray-400">{t("questions.empty")}</p>
       )}
 
       {questions.map((q) => (
@@ -69,7 +73,7 @@ function QuestionList({ interviewId }) {
           onClick={handleAddClick}
           className="text-sm font-semibold text-blue-600 hover:underline"
         >
-          + Add question
+          {t("questions.add")}
         </button>
       )}
     </div>
