@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 import FormField from "../../../components/UI/FormField";
 import LandingButton from "./LandingButton";
 import { contactSchema } from "../data/contactSchema";
 //the form: holds its state, validates, handles the submit
 
 function ContactForm() {
+  const { t } = useTranslation();
   const [sent, setSent] = useState(false);
 
   const {
@@ -35,18 +37,18 @@ function ContactForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <FormField
-          label="Full name"
+          label={t("landing.contact.form.name")}
           id="contact-name"
-          placeholder="Your name"
+          placeholder={t("landing.contact.form.namePlaceholder")}
           autoComplete="name"
           error={errors.name?.message}
           {...register("name")}
         />
         <FormField
-          label="Email address"
+          label={t("landing.contact.form.email")}
           id="contact-email"
           type="email"
-          placeholder="you@example.com"
+          placeholder={t("landing.contact.form.emailPlaceholder")}
           autoComplete="email"
           error={errors.email?.message}
           {...register("email")}
@@ -55,25 +57,25 @@ function ContactForm() {
 
       <div className="mt-4 flex flex-col gap-4">
         <FormField
-          label="Subject"
+          label={t("landing.contact.form.subject")}
           id="contact-subject"
-          placeholder="What is this about?"
+          placeholder={t("landing.contact.form.subjectPlaceholder")}
           error={errors.subject?.message}
           {...register("subject")}
         />
         <FormField
           as="textarea"
           rows={4}
-          label="Message"
+          label={t("landing.contact.form.message")}
           id="contact-message"
-          placeholder="How can we help?"
+          placeholder={t("landing.contact.form.messagePlaceholder")}
           error={errors.message?.message}
           {...register("message")}
         />
       </div>
 
       <LandingButton type="submit" className="mt-6 w-full">
-        Send message
+        {t("landing.contact.form.send")}
       </LandingButton>
 
       {sent && (
@@ -81,7 +83,7 @@ function ContactForm() {
           role="status"
           className="mt-4 rounded-control bg-accent-soft px-4 py-3 text-sm text-ink"
         >
-          Thanks! Your message has been received.
+          {t("landing.contact.form.sent")}
         </p>
       )}
     </form>
@@ -89,4 +91,3 @@ function ContactForm() {
 }
 
 export default ContactForm;
-//Sends (props)	to FormField: label, id, placeholder, type/as/rows, autoComplete, error, and the register(...) result. To LandingButton: type="submit", className, children

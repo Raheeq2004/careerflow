@@ -1,17 +1,18 @@
+import { useTranslation } from "react-i18next";
 import SectionHeading from "./SectionHeading";
 import StepCard from "./StepCard";
 import { howItWorksSteps } from "../data/howItWorksData";
-//the section: assembles the heading and the cards
-
 
 function HowItWorks() {
+  const { t } = useTranslation();
+
   return (
-    <section id="how-it-worssks" className="scroll-mt-20 bg-white py-16 lg:py-24">
+    <section id="how-it-works" className="scroll-mt-20 bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="How it works"
-          title="From first application to final offer in three steps"
-          description="Set up in under a minute. Nothing to install and no account details to share."
+          eyebrow={t("landing.howItWorks.eyebrow")}
+          title={t("landing.howItWorks.title")}
+          description={t("landing.howItWorks.description")}
         />
 
         <ol className="mt-12 grid gap-6 md:grid-cols-3">
@@ -19,8 +20,8 @@ function HowItWorks() {
             <StepCard
               key={step.id}
               number={index + 1}
-              title={step.title}
-              description={step.description}
+              title={t(step.titleKey)}
+              description={t(step.descriptionKey)}
             />
           ))}
         </ol>
@@ -30,4 +31,3 @@ function HowItWorks() {
 }
 
 export default HowItWorks;
-//Sends (props)	to SectionHeading: eyebrow, title, description. To each StepCard: number, title, description

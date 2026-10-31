@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Logo from "../../../components/UI/Logo";
 import FooterColumn from "./FooterColumn";
 import { footerColumns } from "../data/footerData";
 
 function Footer() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -11,10 +13,10 @@ function Footer() {
         <div className="max-w-xs">
           <Logo tone="light" />
           <p className="mt-4 text-sm text-white/70">
-            A calm, private place to track your job search.
+            {t("landing.footer.tagline")}
           </p>
           <p className="mt-6 text-xs text-white/60">
-            © {year} CareerFlow. All rights reserved.
+            {t("landing.footer.rights", { year })}
           </p>
         </div>
 
@@ -22,8 +24,12 @@ function Footer() {
           {footerColumns.map((column) => (
             <FooterColumn
               key={column.id}
-              title={column.title}
-              links={column.links}
+              title={t(column.titleKey)}
+              // we translate the link labels here, so FooterColumn stays unchanged
+              links={column.links.map((link) => ({
+                ...link,
+                label: t(link.labelKey),
+              }))}
             />
           ))}
         </div>
