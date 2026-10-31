@@ -1,22 +1,22 @@
-//Nothing but data
+//Nothing but data. The texts are KEYS, read from the dictionary when drawn.
 export const heroStats = [
-  { label: "Applied", value: 12, tone: "brand" },
-  { label: "Interviews", value: 3, tone: "accent" },
-  { label: "Offer", value: 1, tone: "warn" },
+  { labelKey: "landing.hero.stats.applied", value: 12, tone: "brand" },
+  { labelKey: "landing.hero.stats.interviews", value: 3, tone: "accent" },
+  { labelKey: "landing.hero.stats.offer", value: 1, tone: "warn" },
 ];
 
 export const heroApplications = [
   {
     id: 1,
-    role: "Frontend Developer",
-    company: "Acme Studio · Remote",
-    status: "Interview",
+    roleKey: "landing.hero.apps.frontendRole",
+    companyKey: "landing.hero.apps.frontendCompany",
+    status: "interview",
   },
   {
     id: 2,
-    role: "React Engineer",
-    company: "Northwind · Hybrid",
-    status: "Applied",
+    roleKey: "landing.hero.apps.reactRole",
+    companyKey: "landing.hero.apps.reactCompany",
+    status: "applied",
   },
 ];
 //id is there so each row has a unique key when mapped

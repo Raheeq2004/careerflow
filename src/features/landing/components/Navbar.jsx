@@ -7,9 +7,12 @@ import { Link } from "react-router";
 
 import LanguageSwitcher from "../../../components/UI/LanguageSwitcher";
 
+import { useTranslation } from "react-i18next";
+
 const linkClasses = "rounded-control px-3 py-2 text-[15px] font-medium text-muted transition-colors hover:bg-brand-soft hover:text-brand";
 
   function Navbar() {
+    const { t } = useTranslation();
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur">
       <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 sm:px-6">
@@ -17,27 +20,26 @@ const linkClasses = "rounded-control px-3 py-2 text-[15px] font-medium text-mute
 
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
-            <li key={link.label}>
+            <li key={link.labelKey}>
               {link.to ? (
                 <Link to={link.to} className={linkClasses}>
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ) : (
                 <a href={link.href} className={linkClasses}>
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               )}
             </li>
           ))}
         </ul>
 
-      
         <div className="flex items-center gap-3">
           <LanguageSwitcher className="hidden sm:inline-block" />
           <LandingButton to="/login" variant="outline">
-            Login
+            {t("landing.nav.login")}
           </LandingButton>
-          <LandingButton to="/signup">Sign Up</LandingButton>
+          <LandingButton to="/signup">{t("landing.nav.signUp")}</LandingButton>
         </div>
       </nav>
     </header>

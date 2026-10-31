@@ -134,6 +134,43 @@
       "urlInvalid": "{{field}} must start with http:// or https://"
     }
   },
+  "landing": {
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "howItWorks": "How it works",
+      "contact": "Contact",
+      "dashboard": "Dashboard",
+      "login": "Login",
+      "signUp": "Sign Up"
+    },
+    "hero": {
+      "badge": "Your personal job-search tracker",
+      "title": "Keep every job application in one calm place",
+      "text": "CareerFlow helps you track applications, plan interviews and see your progress at a glance. No spreadsheets, no lost emails.",
+      "ctaPrimary": "Create free account",
+      "ctaSecondary": "See how it works",
+      "note": "Free to use · Your data stays on your device",
+      "thisWeek": "This week",
+      "stats": {
+        "applied": "Applied",
+        "interviews": "Interviews",
+        "offer": "Offer"
+      },
+      "apps": {
+        "frontendRole": "Frontend Developer",
+        "frontendCompany": "Acme Studio · Remote",
+        "reactRole": "React Engineer",
+        "reactCompany": "Northwind · Hybrid"
+      },
+      "notices": {
+        "interviewTitle": "Interview tomorrow",
+        "interviewDetail": "10:00 · Acme Studio",
+        "offerTitle": "New offer received",
+        "offerDetail": "Bluepeak · Remote"
+      }
+    }
+  },
   "interviews": {
     "types": {
       "HR": "HR",

@@ -138,6 +138,43 @@
       "urlInvalid": "يجب أن يبدأ {{field}} بـ http:// أو https://"
     }
   },
+  "landing": {
+    "nav": {
+      "home": "الرئيسية",
+      "features": "المزايا",
+      "howItWorks": "كيف يعمل",
+      "contact": "تواصل معنا",
+      "dashboard": "لوحة التحكم",
+      "login": "تسجيل الدخول",
+      "signUp": "إنشاء حساب"
+    },
+    "hero": {
+      "badge": "متتبّعك الشخصي للبحث عن عمل",
+      "title": "احتفظ بكل طلبات التوظيف في مكان واحد هادئ",
+      "text": "يساعدك CareerFlow على تتبّع طلباتك، والتخطيط لمقابلاتك، ومشاهدة تقدّمك بنظرة واحدة. بلا جداول بيانات ولا رسائل ضائعة.",
+      "ctaPrimary": "أنشئ حساباً مجانياً",
+      "ctaSecondary": "شاهد كيف يعمل",
+      "note": "مجاني · وبياناتك تبقى على جهازك",
+      "thisWeek": "هذا الأسبوع",
+      "stats": {
+        "applied": "تم التقديم",
+        "interviews": "مقابلات",
+        "offer": "عرض"
+      },
+      "apps": {
+        "frontendRole": "مطوّر واجهات أمامية",
+        "frontendCompany": "Acme Studio · عن بُعد",
+        "reactRole": "مهندس React",
+        "reactCompany": "Northwind · هجين"
+      },
+      "notices": {
+        "interviewTitle": "مقابلة غداً",
+        "interviewDetail": "10:00 · Acme Studio",
+        "offerTitle": "تم استلام عرض جديد",
+        "offerDetail": "Bluepeak · عن بُعد"
+      }
+    }
+  },
   "interviews": {
     "types": {
       "HR": "الموارد البشرية",

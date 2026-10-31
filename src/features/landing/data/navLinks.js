@@ -1,7 +1,9 @@
+
+
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Contact", href: "#contact" },
-  { label: "Dashboard", to: "/app/dashboard"},
+  { labelKey: "landing.nav.home", href: "#home" },
+  { labelKey: "landing.nav.features", href: "#features" },
+  { labelKey: "landing.nav.howItWorks", href: "#how-it-works" },
+  { labelKey: "landing.nav.contact", href: "#contact" },
+  { labelKey: "landing.nav.dashboard", to: "/app/dashboard" },
 ];
